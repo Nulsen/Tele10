@@ -30,24 +30,30 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-fixed-top navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="./img/logo.png"></a>
-            <ul class="nav navbar-nav float-xs-right">
-                <li class="nav-item text-uppercase active">
-                    <a class="nav-link" href="#">Hem <span class="sr-only">(current)</span></a>
+    <nav id="navbar" class="">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="#"><img src="./img/logo.png"></a>
+        <div id="navbar-collapse" class="collapse">
+            <ul>
+                <li class="scrollspy" data-scroll="#hero">
+                    <a href="#">Hem <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item text-uppercase">
-                    <a class="nav-link" href="#">Produkter &amp; tjänster</a>
+                <li class="scrollspy" data-scroll="#products-services">
+                    <a href="#">Produkter &amp; tjänster</a>
                 </li>
-                <li class="nav-item text-uppercase">
-                    <a class="nav-link" href="#">Om oss</a>
+                <li class="scrollspy" data-scroll="#about-us-cases-customers">
+                    <a href="#">Om oss</a>
                 </li>
-                <li class="nav-item text-uppercase">
-                    <a class="nav-link" href="#">Kontakt</a>
+                <li class="scrollspy" data-scroll="#contact">
+                    <a href="#">Kontakt</a>
                 </li>
-                <li class="nav-item text-uppercase">
-                    <a class="nav-link" href="#">Mina sidor</a>
+                <li>
+                    <a href="http://hem.tele10.se/">Mina sidor</a>
                 </li>
             </ul>
         </div>
@@ -55,9 +61,8 @@
     <div id="hero">
         <div class="container-fluid">
             <div class="row">
-                <div class="unit" data-0="transform: translate3d(0px,0px,0px);" data-1800="transform: translate3d(0px,100px,0px);">
-                    <div class="caption">Molnbaserad växel
-                        <br>fast eller mobil
+                <div class="unit" data-0="transform: translate3d(0px,0px,0px);" data-1800="transform: translate3d(0px,140px,0px);">
+                    <div class="caption">Molnbaserad växel<br>fast eller mobil
                     </div>
                     <div class="discover">
                         <div class="button">Beställ</div>
@@ -67,163 +72,196 @@
             </div>
         </div>
     </div>
-    <div id="customers">
-        <div class="container">
-            <div class="row">
-                <div class="text-xs-center img-container col-xs-4">
-                    <img src="./img/koberg_golfklubb.png" alt="Koberg Golfklubb">
+    <div id="products-services">
+        <div id="services">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-xs-center col-xs-12 title">Tjänster</h1>
                 </div>
-                <div class="text-xs-center img-container col-xs-4">
-                    <img src="./img/marstrands_havshotell.png" alt="Koberg Golfklubb">
+                <div class="row">
+                    <h2 class="text-xs-center col-xs-12 sub-title">Tele10 Total</h2>
+                    <p>Tele10 Total är en växellösningar där det går att kombinera fasta och mobila enheter samt softphones.</p>
                 </div>
-                <div class="text-xs-center img-container col-xs-4">
-                    <img src="./img/world_of_golf.png" alt="Koberg Golfklubb">
+            </div>
+        </div>
+        <div id="products">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-xs-center col-xs-12 title">Enheter</h1>
+                </div>
+                <div class="row">
+                    <h2 class="text-xs-center col-xs-12 sub-title">Gigabit SL610 PRO</h2>
+                    <div class="col-xs-12 product">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="col-xs-12 fact">
+                                    <div class="row">
+                                        <h3 class="header">Headsetanslutning</h3>
+                                        <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 fact">
+                                    <div class="row">
+                                        <h3 class="header">Upp till 15 timmar</h3>
+                                        <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 fact">
+                                    <div class="row">
+                                        <h3 class="header">Stor TFT färgskärm</h3>
+                                        <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="row">
+                                    <div class="col-xs-10 offset-xs-1">
+                                        <img src="./img/Gigaset-SL610-PRO-phone.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="col-xs-12 fact">
+                                    <div class="row">
+                                        <h3 class="header">Vibration</h3>
+                                        <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 fact">
+                                    <div class="row">
+                                        <h3 class="header">Mini USB för PC anslutning</h3>
+                                        <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 fact">
+                                    <div class="row">
+                                        <h3 class="header">Lorem ipsum</h3>
+                                        <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 product">
+                        <div class="row">
+                            <div class="col-xs-10 offset-xs-1">
+                                <div class="row">
+                                    <div class="col-xs-6 offset-xs-6">
+                                        <h2 class="sub-title">Cisco SPA525G 5-Line IP Phone</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <img src="http://www.cisco.com/c/dam/en/us/products/collateral/collaboration-endpoints/spa525g-5-line-ip-phone-color-display/data_sheet_c78-508997.doc/_jcr_content/renditions/data_sheet_c78-508997-2.jpg">
+                                    </div>
+                                    <div class="col-xs-6 offset-xs-1">
+                                        <div class="col-xs-12 fact">
+                                            <div class="row">
+                                                <h4 class="header">Lorem Ipsum</h4>
+                                                <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 fact">
+                                            <div class="row">
+                                                <h4 class="header">Lorem Ipsum</h4>
+                                                <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 fact">
+                                            <div class="row">
+                                                <h4 class="header">Lorem Ipsum</h4>
+                                                <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 product">
+                        <div class="row">
+                            <div class="col-xs-10 offset-xs-1">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <h2 class="sub-title">Gigabit SL610 PRO</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <div class="col-xs-12 fact">
+                                            <div class="row">
+                                                <h4 class="header">Lorem Ipsum</h4>
+                                                <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 fact">
+                                            <div class="row">
+                                                <h4 class="header">Lorem Ipsum</h4>
+                                                <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 fact">
+                                            <div class="row">
+                                                <h4 class="header">Lorem Ipsum</h4>
+                                                <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3 offset-xs-1">
+                                        <img src="./img/Gigaset-SL610-PRO-phone.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="products">
-        <div class="container">
-            <div class="row">
-                <h1 class="text-xs-center col-xs-12 title">Urval av enheter</h1>
-                <h2 class="text-xs-center col-xs-12 sub-title">Gigabit SL610 PRO</h2>
-                <div class="col-xs-12 product">
-                    <div class="row">
-                        <div class="col-xs-4">
-                            <div class="col-xs-12 fact">
-                                <div class="row">
-                                    <h3 class="header">Headsetanslutning</h3>
-                                    <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 fact">
-                                <div class="row">
-                                    <h3 class="header">Upp till 15 timmar</h3>
-                                    <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 fact">
-                                <div class="row">
-                                    <h3 class="header">Stor TFT färgskärm</h3>
-                                    <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="row">
-                                <div class="col-xs-10 offset-xs-1">
-                                    <img src="./img/Gigaset-SL610-PRO-phone.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="col-xs-12 fact">
-                                <div class="row">
-                                    <h3 class="header">Vibration</h3>
-                                    <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 fact">
-                                <div class="row">
-                                    <h3 class="header">Mini USB för PC anslutning</h3>
-                                    <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 fact">
-                                <div class="row">
-                                    <h3 class="header">Lorem ipsum</h3>
-                                    <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
-                                </div>
-                            </div>
-                        </div>
+    <div id="about-us-cases-customers">
+        <div id="customers">
+            <div class="container">
+                <div class="row">
+                    <div class="text-xs-center img-container col-xs-4">
+                        <img src="./img/koberg_golfklubb.png" alt="Koberg Golfklubb">
                     </div>
-                </div>
-                <div class="col-xs-12 product">
-                    <div class="row">
-                        <div class="col-xs-10 offset-xs-1">
-                            <div class="row">
-                                <div class="col-xs-6 offset-xs-6">
-                                    <h2 class="sub-title">Cisco SPA525G 5-Line IP Phone</h2>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5">
-                                    <img src="http://www.cisco.com/c/dam/en/us/products/collateral/collaboration-endpoints/spa525g-5-line-ip-phone-color-display/data_sheet_c78-508997.doc/_jcr_content/renditions/data_sheet_c78-508997-2.jpg">
-                                </div>
-                                <div class="col-xs-6 offset-xs-1">
-                                    <div class="col-xs-12 fact">
-                                        <div class="row">
-                                            <h4 class="header">Lorem Ipsum</h4>
-                                            <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 fact">
-                                        <div class="row">
-                                            <h4 class="header">Lorem Ipsum</h4>
-                                            <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 fact">
-                                        <div class="row">
-                                            <h4 class="header">Lorem Ipsum</h4>
-                                            <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="text-xs-center img-container col-xs-4">
+                        <img src="./img/marstrands_havshotell.png" alt="Koberg Golfklubb">
                     </div>
-                </div>
-                <div class="col-xs-12 product">
-                    <div class="row">
-                        <div class="col-xs-10 offset-xs-1">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <h2 class="sub-title">Gigabit SL610 PRO</h2>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8">
-                                    <div class="col-xs-12 fact">
-                                        <div class="row">
-                                            <h4 class="header">Lorem Ipsum</h4>
-                                            <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 fact">
-                                        <div class="row">
-                                            <h4 class="header">Lorem Ipsum</h4>
-                                            <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor. Fusce pellentesque est nec nisl posuere, at laoreet tellus iaculis.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 fact">
-                                        <div class="row">
-                                            <h4 class="header">Lorem Ipsum</h4>
-                                            <p class="sub-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra dolor. Praesent eget velit dolor.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-3 offset-xs-1">
-                                    <img src="./img/Gigaset-SL610-PRO-phone.png">
-                                </div>
-                            </div>
-                        </div>
+                    <div class="text-xs-center img-container col-xs-4">
+                        <img src="./img/world_of_golf.png" alt="Koberg Golfklubb">
                     </div>
                 </div>
             </div>
         </div>
+        <div id="about-us">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-xs-center col-xs-12 title">Om Tele10</h1>
+                </div>
+            </div>
+        </div>
+        <div id="cases">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-xs-center col-xs-12 title">Nöjda kunder</h1>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="services">
-    </div>
-    <div id="cases">
-    </div>
-    <div id="cases">
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <h1 class="text-xs-center col-xs-12 title">Kontakta oss</h1>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="./scripts/jquery.js"></script>
     <script type="text/javascript" src="./scripts/tether.min.js"></script>
     <script type="text/javascript" src="./scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="./scripts/skrollr.min.js"></script>
     <script type="text/javascript" src="./scripts/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="./scripts/jquery-scrollspy.min.js"></script>
     <script type="text/javascript" src="./scripts/script.js"></script>
 </body>
 
