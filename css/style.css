@@ -75,6 +75,102 @@ body {
       padding: 0.8rem 2rem;
       cursor: pointer; }
 
+.hero {
+  width: 100vw;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  height: 180px; }
+  @media only screen and (min-width: 768px) {
+    .hero {
+      height: 320px; } }
+  .hero:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #003876;
+    opacity: 0.3;
+    z-index: 0; }
+  .hero .caption {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #fff;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    @media only screen and (min-width: 768px) {
+      .hero .caption {
+        max-width: 520px; } }
+    @media only screen and (min-width: 1200px) {
+      .hero .caption {
+        max-width: 680px; } }
+    .hero .caption h1 {
+      margin-bottom: 30px; }
+      @media only screen and (max-width: 767px) {
+        .hero .caption h1 {
+          margin-bottom: 15px;
+          font-size: 30px; } }
+    .hero .caption h3 {
+      margin-bottom: 15px;
+      font-size: 18px; }
+      @media only screen and (min-width: 768px) {
+        .hero .caption h3 {
+          margin-bottom: 30px;
+          font-size: 20px; } }
+    .hero .caption .btn {
+      border-radius: 0;
+      border-color: #fff;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      cursor: pointer; }
+
+.hero.about-us {
+  background-image: url(../img/hero/hero-about-us-bw-sm.png); }
+  @media only screen and (min-width: 768px) {
+    .hero.about-us {
+      background-image: url(../img/hero/hero-about-us-bw-md.png); } }
+  @media only screen and (min-width: 992px) {
+    .hero.about-us {
+      background-image: url(../img/hero/hero-about-us-bw-lg.png); } }
+  @media only screen and (min-width: 1200px) {
+    .hero.about-us {
+      background-image: url(../img/hero/hero-about-us-bw-xl.png); } }
+  @media only screen and (min-width: 1920px) {
+    .hero.about-us {
+      background-image: url(../img/hero/hero-about-us-bw-xxl.png); } }
+  @media only screen and (min-width: 2560px) {
+    .hero.about-us {
+      background-image: url(../img/hero/hero-about-us-bw-xxxl.png); } }
+
+.hero.products-and-services {
+  background-image: url(../img/hero/hero-products-and-services-bw-sm.png); }
+  @media only screen and (min-width: 768px) {
+    .hero.products-and-services {
+      background-image: url(../img/hero/hero-products-and-services-bw-md.png); } }
+  @media only screen and (min-width: 992px) {
+    .hero.products-and-services {
+      background-image: url(../img/hero/hero-products-and-services-bw-lg.png); } }
+  @media only screen and (min-width: 1200px) {
+    .hero.products-and-services {
+      background-image: url(../img/hero/hero-products-and-services-bw-xl.png); } }
+  @media only screen and (min-width: 1920px) {
+    .hero.products-and-services {
+      background-image: url(../img/hero/hero-products-and-services-bw-xxl.png); } }
+  @media only screen and (min-width: 2560px) {
+    .hero.products-and-services {
+      background-image: url(../img/hero/hero-products-and-services-bw-xxxl.png); } }
+
 .pitch {
   padding-top: 100px;
   padding-bottom: 100px; }
@@ -256,6 +352,39 @@ body {
       @media only screen and (max-width: 991px) {
         .clients .logos img {
           max-width: 200px; } }
+
+.about {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  @media only screen and (max-width: 991px) {
+    .about {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  .about p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto; }
+
+.subsidiary {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #f8f8f8;
+  text-align: center; }
+  @media only screen and (max-width: 991px) {
+    .subsidiary {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  .subsidiary h3 {
+    margin-bottom: 50px; }
+    @media only screen and (max-width: 991px) {
+      .subsidiary h3 {
+        margin-bottom: 30px;
+        font-size: 22px; } }
+  .subsidiary h5 {
+    margin-top: 50px; }
+    @media only screen and (max-width: 991px) {
+      .subsidiary h5 {
+        font-size: 16px; } }
 
 .footer {
   padding-top: 100px;
