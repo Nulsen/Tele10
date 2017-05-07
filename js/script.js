@@ -3,7 +3,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         $('html, body').stop().animate({
-            scrollTop: window.window.innerHeight
+            scrollTop: $('.pitch').offset().top
         }, 500);
     });
     // function is_touch_device() {
