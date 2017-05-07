@@ -1,0 +1,19 @@
+{
+  "name": "tele10",
+  "version": "1.0.0",
+  "description": "Tele10",
+  "author": "Jonathan Nielsen",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/jonathan-nielsen/Tele10"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-debug": "^3.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp4": "^4.0.1",
+    "sass": "^0.5.0"
+  }
+}
