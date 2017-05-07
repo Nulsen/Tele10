@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    $('#read-more').click((e) => {
+        e.preventDefault();
+
+        $('html, body').stop().animate({
+            scrollTop: window.window.innerHeight
+        }, 500);
+    });
     // function is_touch_device() {
     //     return (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
     // }
