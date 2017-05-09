@@ -171,6 +171,24 @@ body {
     .hero.products-and-services {
       background-image: url(../img/hero/hero-products-and-services-bw-xxxl.png); } }
 
+.hero.contact {
+  background-image: url(../img/hero/hero-about-us-bw-sm.png); }
+  @media only screen and (min-width: 768px) {
+    .hero.contact {
+      background-image: url(../img/hero/hero-about-us-bw-md.png); } }
+  @media only screen and (min-width: 992px) {
+    .hero.contact {
+      background-image: url(../img/hero/hero-about-us-bw-lg.png); } }
+  @media only screen and (min-width: 1200px) {
+    .hero.contact {
+      background-image: url(../img/hero/hero-about-us-bw-xl.png); } }
+  @media only screen and (min-width: 1920px) {
+    .hero.contact {
+      background-image: url(../img/hero/hero-about-us-bw-xxl.png); } }
+  @media only screen and (min-width: 2560px) {
+    .hero.contact {
+      background-image: url(../img/hero/hero-about-us-bw-xxxl.png); } }
+
 .pitch {
   padding-top: 100px;
   padding-bottom: 100px; }
@@ -493,6 +511,106 @@ body {
       border-bottom: 1px solid #bbb; }
     .products.multiple .product:last-child {
       padding-top: 30px; } }
+
+.services-preamble.preamble p {
+  max-width: 540px; }
+
+.services {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  .services.grey {
+    background-color: #f8f8f8; }
+  @media only screen and (max-width: 991px) {
+    .services {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  .services .service .title {
+    margin-bottom: 30px; }
+  .services .service .sub-title {
+    margin-bottom: 30px; }
+  .services .service .info {
+    margin-bottom: 30px; }
+  .services .service ul {
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+  .services .service li {
+    margin-bottom: 6px;
+    position: relative; }
+    @media only screen and (min-width: 992px) {
+      .services .service li {
+        padding-left: 30px; } }
+    @media only screen and (max-width: 767px) {
+      .services .service li {
+        padding-left: 0;
+        margin-bottom: 30px;
+        padding-top: 50px; } }
+  .services .service .fa {
+    font-size: 18px;
+    color: #51bf5f;
+    margin-right: 10px; }
+    @media only screen and (min-width: 992px) {
+      .services .service .fa {
+        margin-right: 0;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%); } }
+    @media only screen and (max-width: 767px) {
+      .services .service .fa {
+        margin-right: 0;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        padding: 10px;
+        border: 1px solid #51bf5f;
+        border-radius: 50%; } }
+  @media only screen and (max-width: 991px) {
+    .services .service .text-container {
+      order: 1; } }
+  .services .service img {
+    max-height: 200px;
+    max-width: 100%;
+    padding: 0 15px; }
+    @media only screen and (max-width: 991px) {
+      .services .service img {
+        margin-bottom: 50px; } }
+  .services.multiple img {
+    max-height: 180px;
+    margin-bottom: 50px; }
+  @media only screen and (min-width: 992px) {
+    .services.multiple .service:first-child {
+      padding-right: 60px;
+      border-right: 1px solid #bbb; }
+    .services.multiple .service:last-child {
+      padding-left: 60px; } }
+  @media only screen and (max-width: 991px) {
+    .services.multiple .service:first-child {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #bbb; }
+    .services.multiple .service:last-child {
+      padding-top: 30px; } }
+
+.contact {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #f8f8f8; }
+  @media only screen and (max-width: 991px) {
+    .contact {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  .contact .contact-method {
+    white-space: nowrap; }
+  .contact .btn-outline-primary {
+    border-radius: 0;
+    cursor: pointer; }
 
 .subsidiary {
   padding-top: 100px;
