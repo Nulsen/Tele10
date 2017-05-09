@@ -352,10 +352,10 @@ body {
       max-width: 100%;
       opacity: 0.4;
       cursor: pointer;
+      -webkit-backface-visibility: hidden;
       -webkit-transition: opacity 100ms ease-out;
       -o-transition: opacity 100ms ease-out;
       transition: opacity 100ms ease-out;
-      -webkit-backface-visibility: hidden;
       -webkit-transform: rotate(0);
       -moz-transform: rotate(0);
       transform: rotate(0);
@@ -408,7 +408,10 @@ body {
       margin-bottom: 30px; }
     .preamble .message p {
       max-width: 700px;
-      margin: auto; }
+      margin: auto;
+      margin-top: 15px; }
+      .preamble .message p:first-child {
+        margin-top: 0; }
 
 .products {
   padding-top: 100px;
@@ -478,13 +481,13 @@ body {
   .products.multiple img {
     max-height: 180px;
     margin-bottom: 50px; }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) {
     .products.multiple .product:first-child {
       padding-right: 60px;
       border-right: 1px solid #bbb; }
     .products.multiple .product:last-child {
       padding-left: 60px; } }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 767px) {
     .products.multiple .product:first-child {
       padding-bottom: 30px;
       border-bottom: 1px solid #bbb; }
