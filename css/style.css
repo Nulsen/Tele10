@@ -181,6 +181,8 @@ body {
   .pitch .message {
     margin-bottom: 60px;
     text-align: center; }
+    .pitch .message h2 {
+      margin-bottom: 30px; }
     .pitch .message p {
       max-width: 700px;
       margin: auto; }
@@ -189,7 +191,7 @@ body {
     @media only screen and (max-width: 991px) {
       .pitch .box {
         align-items: center;
-        margin-top: 30px; }
+        margin-top: 50px; }
         .pitch .box:first-child {
           margin-top: 0; } }
     .pitch .box .icon {
@@ -222,21 +224,18 @@ body {
           .pitch .box .icon img {
             width: 32px; } }
     .pitch .box .text {
-      width: calc(100% - 96px - 30px);
-      padding-left: 30px;
-      padding-right: 30px;
+      flex: 1;
+      padding-left: 15px;
+      padding-right: 15px;
       font-size: 13px; }
-      @media only screen and (max-width: 1199px) {
-        .pitch .box .text {
-          width: calc(100% - 80px - 15px);
-          padding-left: 15px;
-          padding-right: 15px; } }
       @media only screen and (max-width: 991px) {
         .pitch .box .text {
           font-size: 14px;
           padding-right: 0; } }
       .pitch .box .text .title {
         font-size: 24px; }
+      .pitch .box .text p {
+        margin-bottom: 0; }
 
 .examples {
   background-color: #f8f8f8;
@@ -346,12 +345,43 @@ body {
         margin-top: 30px; }
         .clients .logos [class*="col-"]:first-child {
           margin-top: 0; } }
+    .clients .logos [class*="col-"].active img {
+      opacity: 1; }
     .clients .logos img {
       max-height: 100px;
-      max-width: 100%; }
+      max-width: 100%;
+      opacity: 0.4;
+      cursor: pointer;
+      -webkit-transition: opacity 100ms ease-out;
+      -o-transition: opacity 100ms ease-out;
+      transition: opacity 100ms ease-out;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: rotate(0);
+      -moz-transform: rotate(0);
+      transform: rotate(0);
+      -webkit-transform: translateZ(0); }
       @media only screen and (max-width: 991px) {
         .clients .logos img {
           max-width: 200px; } }
+      @media only screen and (max-width: 767px) {
+        .clients .logos img {
+          opacity: 1; } }
+      .clients .logos img:hover {
+        opacity: 1; }
+  .clients .quotes {
+    height: 330px;
+    font-size: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1; }
+    .clients .quotes .quote {
+      display: none; }
+      .clients .quotes .quote:first-child {
+        display: block; }
+    @media only screen and (max-width: 767px) {
+      .clients .quotes {
+        display: none; } }
 
 .about {
   padding-top: 100px;
@@ -364,6 +394,102 @@ body {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto; }
+
+.preamble {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  @media only screen and (max-width: 991px) {
+    .preamble {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  .preamble .message {
+    text-align: center; }
+    .preamble .message h2 {
+      margin-bottom: 30px; }
+    .preamble .message p {
+      max-width: 700px;
+      margin: auto; }
+
+.products {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  .products.grey {
+    background-color: #f8f8f8; }
+  @media only screen and (max-width: 991px) {
+    .products {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  .products .product .title {
+    margin-bottom: 30px; }
+  .products .product .sub-title {
+    margin-bottom: 30px; }
+  .products .product .info {
+    margin-bottom: 30px; }
+  .products .product ul {
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+  .products .product li {
+    margin-bottom: 6px;
+    position: relative; }
+    @media only screen and (min-width: 992px) {
+      .products .product li {
+        padding-left: 30px; } }
+    @media only screen and (max-width: 767px) {
+      .products .product li {
+        padding-left: 0;
+        margin-bottom: 30px;
+        padding-top: 50px; } }
+  .products .product .fa {
+    font-size: 18px;
+    color: #51bf5f;
+    margin-right: 10px; }
+    @media only screen and (min-width: 992px) {
+      .products .product .fa {
+        margin-right: 0;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%); } }
+    @media only screen and (max-width: 767px) {
+      .products .product .fa {
+        margin-right: 0;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        padding: 10px;
+        border: 1px solid #51bf5f;
+        border-radius: 50%; } }
+  @media only screen and (max-width: 991px) {
+    .products .product .text-container {
+      order: 1; } }
+  .products .product img {
+    max-height: 290px; }
+    @media only screen and (max-width: 991px) {
+      .products .product img {
+        margin-bottom: 50px; } }
+  .products.multiple img {
+    max-height: 180px;
+    margin-bottom: 50px; }
+  @media only screen and (min-width: 992px) {
+    .products.multiple .product:first-child {
+      padding-right: 60px;
+      border-right: 1px solid #bbb; }
+    .products.multiple .product:last-child {
+      padding-left: 60px; } }
+  @media only screen and (max-width: 991px) {
+    .products.multiple .product:first-child {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #bbb; }
+    .products.multiple .product:last-child {
+      padding-top: 30px; } }
 
 .subsidiary {
   padding-top: 100px;
