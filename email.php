@@ -6,7 +6,7 @@
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
-    $url = 'http://server.com/path';
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
     $secret = '6LeboCAUAAAAABEtpDeF7F5AOvT-cG3HzerFaMqB';
     $response = $_POST['g-recaptcha-response'];
     $remoteip = getRealIpAddr();
