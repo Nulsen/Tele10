@@ -1,7 +1,29 @@
 <?php
     require 'phpmailer/PHPMailerAutoload.php';
 
-    echo 'Test';
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $url = 'http://server.com/path';
+    $secret = '6LeboCAUAAAAABEtpDeF7F5AOvT-cG3HzerFaMqB';
+    $response = $_POST['g-recaptcha-response'];
+    $remoteip = getRealIpAddr();
+
+
+    $vars = 'secret=' . $secret . '&response=' . $response . '&remoteip=' . $remoteip;
+
+    $ch = curl_init( $url );
+    curl_setopt( $ch, CURLOPT_POST, 1);
+    curl_setopt( $ch, CURLOPT_POSTFIELDS, $vars);
+    curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt( $ch, CURLOPT_HEADER, 0);
+    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+
+    $res = curl_exec( $ch );
+
+    echo $res . "\n" . $vars;
 
     // $mail = new PHPMailer;
 
@@ -36,4 +58,16 @@
     // } else {
     //     echo 'Message has been sent';
     // }
+
+    function getRealIpAddr() {
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } else {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+
+        return $ip;
+    }
 ?>
