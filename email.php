@@ -14,8 +14,8 @@
 
     // echo 'json: ' . $json . "\n";
     echo $json . "\n\n";
-    print_r($json . "\n\n");
-    echo print_r($json . "\n\n");
+    print_r($json);
+    echo print_r($json);
     echo $success1 . "\n\n";
     echo $success2;
     // echo 'success: ' . $success . "\n";
