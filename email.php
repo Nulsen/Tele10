@@ -13,18 +13,14 @@
     $success2 = $json['Success'];
 
     // echo 'json: ' . $json . "\n";
-    echo $json . "\n\n";
-    print_r($json);
-    echo print_r($json);
-    echo $success1 . "\n\n";
-    echo $success2;
+    // echo $success;
     // echo 'success: ' . $success . "\n";
 
-    if ($success) {
-        // echo 'Success!';
+    if ($success == 1) {
+        echo 'Success!';
     } else {
-        // die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-        // "(reCAPTCHA said: " . $resp->error . ")");
+        die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+        "(reCAPTCHA said: " . $resp->error . ")");
     }
 
     // if ($res.err) {
