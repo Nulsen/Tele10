@@ -11,15 +11,15 @@
     $res = json_decode($json, true);
     $success = $json->success;
 
-    echo 'json: ' . $json . "\n";
-    echo 'res: ' . $res[0] . "\n";
-    echo 'success: ' . $success . "\n";
+    // echo 'json: ' . $json . "\n";
+    echo $res;
+    // echo 'success: ' . $success . "\n";
 
     if ($success) {
-        echo 'Success!';
+        // echo 'Success!';
     } else {
-        die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-        "(reCAPTCHA said: " . $resp->error . ")");
+        // die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+        // "(reCAPTCHA said: " . $resp->error . ")");
     }
 
     // if ($res.err) {
