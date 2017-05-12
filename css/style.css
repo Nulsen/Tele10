@@ -5,8 +5,10 @@ body {
   .success {
     color: green;
     margin-bottom: 15px;
+    height: 0px;
   }
   .error {
+    height: 0px;
     color: red;
     margin-bottom: 15px;
   }
