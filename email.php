@@ -8,12 +8,22 @@
 
     $vars = 'secret=' . $secret . '&response=' . $response . '&remoteip=' . $remoteip;
 
-    $res = testRobot($vars);
+    echo $vars;
 
-    echo $res . "\n" . $vars;
+    $res = testRobot($vars);
+    $success = $res->success;
+
+    if ($success) {
+        echo $res . "\n" . $vars;
+    } else {
+        header("HTTP/1.0 500 Internal Server Error");
+        echo $res['error-codes'];
+        exit(500);
+    }
 
     // if ($res.err) {
     //     header("HTTP/1.0 500 Internal Server Error");
+    //     exit()
     // }
 
     // $mail = new PHPMailer;
