@@ -28,21 +28,21 @@ $(document).ready(function() {
 
         console.log(1, 'Submitting');
 
-        console.log(2.1, 'Slide up old erorr messages');
+        console.log(2.1, 'Slide up visible messages');
 
-        $(this).find('.success, .error').text('').slideUp(() => {
-            console.log(2.2, 'Slide up old erorr messages completed');
+        $(e.target).find('.success, .error').text('').slideUp(() => {
+            console.log(2.2, 'Slide up visible messages completed');
         });
 
         console.log(3, 'Post the form');
         $.post(e.target.action, $(e.target).serialize()).then(function(response) {
             console.log(4.1, 'Success, slide down success message', response);
-            $(this).find('.success').text(response).slideDown(() => {
+            $(e.target).find('.success').text(response).slideDown(() => {
                 console.log(4.1, 'Completed');
             });
         }).fail(function(err) {
             console.log(4.2, 'Error, slide down error message', err);
-            $(this).find('.error').text(err).slideDown(() => {
+            $(e.target).find('.error').text(err).slideDown(() => {
                 console.log(4.2, 'Completed');
             });
         });
