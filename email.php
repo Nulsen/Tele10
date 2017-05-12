@@ -11,7 +11,7 @@
     $res = json_decode($json);
     $success = $json->success;
 
-    echo 'json: ' . $json . "\n";
+    // echo 'json: ' . $json . "\n";
     echo 'res: ' . $res . "\n";
     echo 'success: ' . $success . "\n";
 
