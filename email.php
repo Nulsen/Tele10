@@ -13,7 +13,7 @@
     $success2 = $json['Success'];
 
     // echo 'json: ' . $json . "\n";
-    echo $json . "\n\n"
+    echo $json . "\n\n";
     print_r($json . "\n\n");
     echo print_r($json . "\n\n");
     echo $success1 . "\n\n";
