@@ -5,16 +5,15 @@
     $email = $_POST['email'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-
-    $vars = 'secret=' . $secret . '&response=' . $response . '&remoteip=' . $remoteip;
+    $response = $_POST['g-recaptcha-response'];
 
     echo $vars;
 
-    $res = testRobot($vars);
+    $res = testRobot($response);
     $success = $res->success;
 
     if ($success) {
-        echo $res . "\n" . $vars;
+        echo $res;
     } else {
         header("HTTP/1.0 500 Internal Server Error");
         echo $res['error-codes'];
@@ -72,11 +71,12 @@
         return $ip;
     }
 
-    function testRobot($vars) {
+    function testRobot($response) {
         $url = 'https://www.google.com/recaptcha/api/siteverify';
         $secret = '6LeboCAUAAAAABEtpDeF7F5AOvT-cG3HzerFaMqB';
-        $response = $_POST['g-recaptcha-response'];
         $remoteip = getRealIpAddr();
+
+        $vars = 'secret=' . $secret . '&response=' . $response . '&remoteip=' . $remoteip;
 
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_POST, 1);
