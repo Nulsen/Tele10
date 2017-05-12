@@ -8,7 +8,7 @@
     $response = $_POST['g-recaptcha-response'];
 
     $json = testRobot($response);
-    $res = json_decode($json, true);
+    $res = json_decode($json);
     $success = $json->success;
 
     // echo 'json: ' . $json . "\n";
