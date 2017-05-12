@@ -7,15 +7,16 @@
     $message = $_POST['message'];
     $response = $_POST['g-recaptcha-response'];
 
-    $json = testRobot($response);
-    $res = json_decode($json, true);
-    $success1 = $res['message'];
-    $success2 = $res['Message'];
+    $res = testRobot($response);
+    $json = json_decode($res, true);
+    $success1 = $json['message'];
+    $success2 = $json['Message'];
 
     // echo 'json: ' . $json . "\n";
-    echo $json;
-    echo $res;
-    echo $success1;
+    echo $json . "\n\n"
+    print_r($json . "\n\n");
+    echo print_r($json . "\n\n");
+    echo $success1 . "\n\n";
     echo $success2;
     // echo 'success: ' . $success . "\n";
 
