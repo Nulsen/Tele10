@@ -27,13 +27,11 @@ $(document).ready(function() {
         e.preventDefault();
 
         $(e.target).find('.success:visible, .error:visible').slideUp(function() {
-            $(this).text('');
-        });
-
-        $.post(e.target.action, $(e.target).serialize()).then(function(response) {
-            $(e.target).find('.success').text(response).slideDown();
-        }).fail(function(err) {
-            $(e.target).find('.error').text(err.responseText).slideDown();
+            $.post(e.target.action, $(e.target).serialize()).then(function(response) {
+                $(e.target).find('.success').text(response).slideDown();
+            }).fail(function(err) {
+                $(e.target).find('.error').text(err.responseText).slideDown();
+            });
         });
     });
 });
