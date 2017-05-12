@@ -24,8 +24,8 @@
     $mail->SMTPAuth = true; // Enable SMTP authentication
     $mail->Username = 'kristina.westerberg@tele10.se'; // SMTP username
     $mail->Password = 'sommar17'; // SMTP password
-    $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted - TTL
-    $mail->Port = 465; // TCP port to connect to - 587
+    $mail->SMTPSecure = 'ttl'; // Enable TLS encryption, `ssl` also accepted - TTL
+    $mail->Port = 587; // TCP port to connect to - 587
 
     $mail->isHTML(false);
 
