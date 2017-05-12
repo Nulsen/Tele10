@@ -42,7 +42,7 @@ $(document).ready(function() {
             });
         }).fail(function(err) {
             console.log(4.2, 'Error, slide down error message', err);
-            $(e.target).find('.error').text(err).slideDown(() => {
+            $(e.target).find('.error').text(err.responseText).slideDown(() => {
                 console.log(4.2, 'Completed');
             });
         });
