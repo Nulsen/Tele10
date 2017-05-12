@@ -26,10 +26,10 @@ $(document).ready(function() {
     $('.contact form').submit(function(e) {
         e.preventDefault();
 
-        const $messages = $(e.target).find('.success, .error');
+        const $message = $(e.target).find('.success:visible, .error:visible');
 
-        if ($messages.is(':visible')) {
-            $(e.target).find('.success:visible, .error:visible').slideUp(function() {
+        if ($message.length) {
+            $message.slideUp(function() {
                 postForm($(e.target));
             });
         } else {
