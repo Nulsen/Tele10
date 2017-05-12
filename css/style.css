@@ -6,9 +6,11 @@ body {
     color: green;
     margin-bottom: 15px;
     height: 0px;
+    overflow: hidden;
   }
   .error {
     height: 0px;
+    overflow: hidden;
     color: red;
     margin-bottom: 15px;
   }
