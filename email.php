@@ -9,10 +9,12 @@
 
     $json = testRobot($response);
     $res = json_decode($json, true);
-    $success = $json->success;
+    $success = $res[0];
 
     // echo 'json: ' . $json . "\n";
+    echo $json;
     echo $res;
+    echo $success;
     // echo 'success: ' . $success . "\n";
 
     if ($success) {
