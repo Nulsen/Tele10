@@ -20,12 +20,12 @@
     $mail->SMTPDebug = 3;                               // Enable verbose debug output
 
     $mail->isSMTP(); // Set mailer to use SMTP
-    $mail->Host = 'smtp.tele10.se;smtp01.binero.se'; // Specify main and backup SMTP servers
+    $mail->Host = 'smtp01.binero.se'; // Specify main and backup SMTP servers
     $mail->SMTPAuth = true; // Enable SMTP authentication
     $mail->Username = 'kristina.westerberg@tele10.se'; // SMTP username
     $mail->Password = 'sommar17'; // SMTP password
-    $mail->SMTPSecure = 'ttl'; // Enable TLS encryption, `ssl` also accepted - ttl / ssl
-    $mail->Port = 587; // TCP port to connect to - 587 / 465
+    $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted - ttl / ssl
+    $mail->Port = 465; // TCP port to connect to - 587 / 465
 
     $mail->isHTML(false);
 
