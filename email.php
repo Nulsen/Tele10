@@ -12,7 +12,7 @@
     $success = $json['success'];
 
     if ($success != 1) {
-        die ("Du har fyllt i captchan felaktigt, försök igen.");
+        die ("Du har fyllt i captcha-koden felaktigt, försök igen.");
     }
 
     $mail = new PHPMailer;
