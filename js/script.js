@@ -26,12 +26,25 @@ $(document).ready(function() {
     $('.contact form').submit(function(e) {
         e.preventDefault();
 
-        $(this).find('.success, .error').text('').slideUp();
+        console.log(1, 'Submitting');
 
+        console.log(2.1, 'Slide up old erorr messages');
+
+        $(this).find('.success, .error').text('').slideUp(() => {
+            console.log(2.2, 'Slide up old erorr messages completed');
+        });
+
+        console.log(3, 'Post the form');
         $.post(e.target.action, $(e.target).serialize()).then(function(response) {
-            $(this).find('.success').text(response).slideDown();
+            console.log(4.1, 'Success, slide down success message', response);
+            $(this).find('.success').text(response).slideDown(() => {
+                console.log(4.1, 'Completed');
+            });
         }).fail(function(err) {
-            $(this).find('.error').text(err).slideDown();
+            console.log(4.2, 'Error, slide down error message', err);
+            $(this).find('.error').text(err).slideDown(() => {
+                console.log(4.2, 'Completed');
+            });
         });
     });
 });
