@@ -11,10 +11,10 @@
     $success = $res->success;
 
     if ($success) {
-        echo $res . "\n" . $success . "\n" . $res->success;
+        echo '1: ' . $res . "\n" . $success . "\n" . $res->success;
     } else {
         header("HTTP/1.0 500 Internal Server Error");
-        echo $res . "\n" . $success . "\n" . $res->success;
+        echo '1: ' . $res . "\n" . $success . "\n" . $res->success;
         exit(500);
     }
 
