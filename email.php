@@ -7,8 +7,6 @@
     $message = $_POST['message'];
     $response = $_POST['g-recaptcha-response'];
 
-    echo $vars;
-
     $res = testRobot($response);
     $success = $res->success;
 
