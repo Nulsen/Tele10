@@ -6,24 +6,15 @@
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
-    $secret = '6LeboCAUAAAAABEtpDeF7F5AOvT-cG3HzerFaMqB';
-    $response = $_POST['g-recaptcha-response'];
-    $remoteip = getRealIpAddr();
-
-
     $vars = 'secret=' . $secret . '&response=' . $response . '&remoteip=' . $remoteip;
 
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $vars);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-    $res = curl_exec($ch);
+    $res = testRobot($vars);
 
     echo $res . "\n" . $vars;
+
+    // if ($res.err) {
+    //     header("HTTP/1.0 500 Internal Server Error");
+    // }
 
     // $mail = new PHPMailer;
 
@@ -69,5 +60,21 @@
         }
 
         return $ip;
+    }
+
+    function testRobot($vars) {
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $secret = '6LeboCAUAAAAABEtpDeF7F5AOvT-cG3HzerFaMqB';
+        $response = $_POST['g-recaptcha-response'];
+        $remoteip = getRealIpAddr();
+
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $vars);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        return curl_exec($ch);
     }
 ?>
