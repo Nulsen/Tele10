@@ -10,11 +10,13 @@
     $res = testRobot($response);
     $success = $res->success;
 
+    echo '1: ' . $res . "\n\n" . $success . "\n\n" . $res->success;
+
     if ($success) {
-        echo '1: ' . $res . "\n" . $success . "\n" . $res->success;
+        echo '2: ' . $res . "\n\n" . $success . "\n\n" . $res->success;
     } else {
         header("HTTP/1.0 500 Internal Server Error");
-        echo '1: ' . $res . "\n" . $success . "\n" . $res->success;
+        echo '3: ' . $res . "\n\n" . $success . "\n\n" . $res->success;
         exit(500);
     }
 
