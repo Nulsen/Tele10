@@ -12,15 +12,14 @@
     $success = $json->success;
 
     echo 'json: ' . $json . "\n";
-    echo 'res: ' . $res . "\n";
+    echo 'res: ' . $res[0] . "\n";
     echo 'success: ' . $success . "\n";
 
     if ($success) {
         echo 'Success!';
     } else {
-        header("HTTP/1.0 500 Internal Server Error");
-        echo 'Error!';
-        exit(500);
+        die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+        "(reCAPTCHA said: " . $resp->error . ")");
     }
 
     // if ($res.err) {
