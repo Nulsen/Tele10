@@ -12,6 +12,7 @@
     $success = $json['success'];
 
     if ($success != 1) {
+        header("HTTP/1.0 400 Bad Request");
         die ("Du har fyllt i captcha-koden felaktigt, försök igen.");
     }
 
@@ -36,6 +37,7 @@
     $mail->Body = $message;
 
     if (!$mail->send()) {
+        header("HTTP/1.0 500 Internal Server Error");
         die ("Meddelandet kunde inte tyvärr inte skickas för tillfället. Skicka istället ditt ärende direkt till <a href=\"mailto:info@tele10.se\">info@tele10.se</a>");
     } else {
         echo 'Ditt meddelande har skickats, vi återkommer så fort som möjligt.';
