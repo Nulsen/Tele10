@@ -27,7 +27,7 @@
     $mail->SMTPSecure = 'ttl'; // Enable TLS encryption, `ssl` also accepted - ttl / ssl
     $mail->Port = 587; // TCP port to connect to - 587 / 465
 
-    $mail->isHTML(true);
+    $mail->isHTML(false);
 
     $mail->setFrom($email, $name);
     $mail->addAddress('jonathan.nielsen93@gmail.com', 'Tele10'); // Add a recipient
