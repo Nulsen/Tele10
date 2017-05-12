@@ -12,7 +12,7 @@
     $success = $json['success'];
 
     if ($success != 1) {
-        die ("The was an error with the captcha, try again.");
+        die ("Du har fyllt i captchan felaktigt, försök igen.");
     }
 
     $mail = new PHPMailer;
@@ -32,14 +32,13 @@
     $mail->setFrom($email, $name);
     $mail->addAddress('jonathan.nielsen93@gmail.com', 'Tele10'); // Add a recipient
 
-    $mail->Subject = 'Webite form - ' . $subject;
+    $mail->Subject = 'Tele10 webite form - ' . $subject;
     $mail->Body = $message;
 
     if (!$mail->send()) {
-        echo 'Message could not be sent.';
-        echo 'Mailer Error: ' . $mail->ErrorInfo;
+        die ("Meddelandet kunde inte tyvärr inte skickas för tillfället. Skicka istället ditt ärende direkt till <a href=\"mailto:info@tele10.se\">info@tele10.se</a>");
     } else {
-        echo 'Message has been sent';
+        echo 'Ditt meddelande har skickats, vi återkommer så fort som möjligt.';
     }
 
     function getRealIpAddr() {
