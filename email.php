@@ -23,7 +23,7 @@
     $mail->isSMTP(); // Set mailer to use SMTP
     $mail->Host = 'smtp01.binero.se'; // Specify main and backup SMTP servers
     $mail->SMTPAuth = true; // Enable SMTP authentication
-    $mail->Username = 'contact@allsite.se'; // SMTP username
+    $mail->Username = 'contact@tele10.se'; // SMTP username
     $mail->Password = ''; // SMTP password
     $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted - ttl / ssl
     $mail->Port = 465; // TCP port to connect to - 587 / 465
