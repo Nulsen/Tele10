@@ -24,10 +24,10 @@
     $mail->SMTPAuth = true; // Enable SMTP authentication
     $mail->Username = 'kristina.westerberg@tele10.se'; // SMTP username
     $mail->Password = 'sommar17'; // SMTP password
-    $mail->SMTPSecure = 'ttl'; // Enable TLS encryption, `ssl` also accepted - TTL
-    $mail->Port = 587; // TCP port to connect to - 587
+    $mail->SMTPSecure = 'ttl'; // Enable TLS encryption, `ssl` also accepted - ttl / ssl
+    $mail->Port = 587; // TCP port to connect to - 587 / 465
 
-    $mail->isHTML(false);
+    $mail->isHTML(true);
 
     $mail->setFrom($email, $name);
     $mail->addAddress('jonathan.nielsen93@gmail.com', 'Tele10'); // Add a recipient
