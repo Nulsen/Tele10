@@ -7,17 +7,19 @@
     $message = $_POST['message'];
     $response = $_POST['g-recaptcha-response'];
 
-    $res = testRobot($response);
-    $res = json_decode($res);
-    $success = $res->success;
+    $json = testRobot($response);
+    $res = json_decode($json);
+    $success = $json->success;
 
-    echo '1: ' . $res . "\n\n" . $success . "\n\n" . $res->success;
+    echo 'json: ' . $json . "\n";
+    echo 'res: ' . $res . "\n";
+    echo 'success: ' . $success . "\n";
 
     if ($success) {
-        echo '2: ' . $res . "\n\n" . $success . "\n\n" . $res->success;
+        echo 'Success!';
     } else {
         header("HTTP/1.0 500 Internal Server Error");
-        echo '3: ' . $success . "\n\n" . $res->success;
+        echo 'Error!';
         exit(500);
     }
 
