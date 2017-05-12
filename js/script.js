@@ -26,10 +26,12 @@ $(document).ready(function() {
     $('.contact form').submit(function(e) {
         e.preventDefault();
 
+        $(this).find('.success, .error').text('').slideUp();
+
         $.post(e.target.action, $(e.target).serialize()).then(function(response) {
-            console.log(response);
+            $(this).find('.success').text(response).slideDown();
         }).fail(function(err) {
-            console.log(err);
+            $(this).find('.error').text(err).slideDown();
         });
     });
 });
