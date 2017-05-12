@@ -16,7 +16,7 @@
         echo $res;
     } else {
         header("HTTP/1.0 500 Internal Server Error");
-        echo $res['error-codes'];
+        echo $res;
         exit(500);
     }
 
