@@ -30,7 +30,7 @@ $(document).ready(function() {
 
         console.log(2.1, 'Slide up visible messages');
 
-        $(e.target).find('.success, .error').text('').slideUp(() => {
+        $(e.target).find('.success:visible, .error:visible').text('').slideUp(() => {
             console.log(2.2, 'Slide up visible messages completed');
         });
 
