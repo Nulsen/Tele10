@@ -11,55 +11,36 @@
     $json = json_decode($res, true);
     $success = $json['success'];
 
-    // echo 'json: ' . $json . "\n";
-    // echo $success;
-    // echo 'success: ' . $success . "\n";
-
-    if ($success == 1) {
-        echo 'Success!';
-    } else {
-        die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-        "(reCAPTCHA said: " . $resp->error . ")");
+    if ($success != 1) {
+        die ("The was an error with the captcha, try again.");
     }
 
-    // if ($res.err) {
-    //     header("HTTP/1.0 500 Internal Server Error");
-    //     exit()
-    // }
+    $mail = new PHPMailer;
 
-    // $mail = new PHPMailer;
+    // $mail->SMTPDebug = 3;                               // Enable verbose debug output
 
-    // //$mail->SMTPDebug = 3;                               // Enable verbose debug output
+    $mail->isSMTP(); // Set mailer to use SMTP
+    $mail->Host = 'smtp.tele10.se;smtp01.binero.se'; // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true; // Enable SMTP authentication
+    $mail->Username = 'kristina.westerberg@tele10.se'; // SMTP username
+    $mail->Password = 'sommar17'; // SMTP password
+    $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted - TTL
+    $mail->Port = 465; // TCP port to connect to - 587
 
-    // $mail->isSMTP();                                      // Set mailer to use SMTP
-    // $mail->Host = 'smtp1.example.com;smtp2.example.com';  // Specify main and backup SMTP servers
-    // $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    // $mail->Username = 'user@example.com';                 // SMTP username
-    // $mail->Password = 'secret';                           // SMTP password
-    // $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    // $mail->Port = 587;                                    // TCP port to connect to
+    $mail->isHTML(false);
 
-    // $mail->setFrom('from@example.com', 'Mailer');
-    // $mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
-    // $mail->addAddress('ellen@example.com');               // Name is optional
-    // $mail->addReplyTo('info@example.com', 'Information');
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
+    $mail->setFrom($email, $name);
+    $mail->addAddress('jonathan.nielsen93@gmail.com', 'Tele10'); // Add a recipient
 
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-    // $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Webite form - ' . $subject;
+    $mail->Body = $message;
 
-    // $mail->Subject = 'Here is the subject';
-    // $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-    // if(!$mail->send()) {
-    //     echo 'Message could not be sent.';
-    //     echo 'Mailer Error: ' . $mail->ErrorInfo;
-    // } else {
-    //     echo 'Message has been sent';
-    // }
+    if (!$mail->send()) {
+        echo 'Message could not be sent.';
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+    } else {
+        echo 'Message has been sent';
+    }
 
     function getRealIpAddr() {
         if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
