@@ -9,8 +9,8 @@
 
     $res = testRobot($response);
     $json = json_decode($res, true);
-    $success1 = $json['message'];
-    $success2 = $json['Message'];
+    $success1 = $json['success'];
+    $success2 = $json['Success'];
 
     // echo 'json: ' . $json . "\n";
     echo $json . "\n\n"
