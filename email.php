@@ -8,6 +8,7 @@
     $response = $_POST['g-recaptcha-response'];
 
     $res = testRobot($response);
+    $res = json_decode($res);
     $success = $res->success;
 
     echo '1: ' . $res . "\n\n" . $success . "\n\n" . $res->success;
@@ -16,7 +17,7 @@
         echo '2: ' . $res . "\n\n" . $success . "\n\n" . $res->success;
     } else {
         header("HTTP/1.0 500 Internal Server Error");
-        echo '3: ' . $res . "\n\n" . $success . "\n\n" . $res->success;
+        echo '3: ' . $success . "\n\n" . $res->success;
         exit(500);
     }
 
