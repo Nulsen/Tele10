@@ -12,7 +12,7 @@
     $success = $json->success;
 
     // echo 'json: ' . $json . "\n";
-    echo $res;
+    echo $json->success;
     // echo 'success: ' . $success . "\n";
 
     if ($success) {
