@@ -26,12 +26,22 @@ $(document).ready(function() {
     $('.contact form').submit(function(e) {
         e.preventDefault();
 
-        $(e.target).find('.success:visible, .error:visible').slideUp(function() {
-            $.post(e.target.action, $(e.target).serialize()).then(function(response) {
-                $(e.target).find('.success').text(response).slideDown();
-            }).fail(function(err) {
-                $(e.target).find('.error').text(err.responseText).slideDown();
+        const $messages = $(e.target).find('.success, .error');
+
+        if ($messages.is(':visible')) {
+            $(e.target).find('.success:visible, .error:visible').slideUp(function() {
+                postForm($(e.target));
             });
-        });
+        } else {
+            postForm($(e.target));
+        }
     });
+
+    function postForm($form) {
+        $.post($form[0].action, $form.serialize()).then(function(response) {
+            $form.find('.success').text(response).slideDown();
+        }).fail(function(err) {
+            $form.find('.error').text(err.responseText).slideDown();
+        });
+    }
 });
