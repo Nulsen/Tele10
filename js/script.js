@@ -39,6 +39,7 @@ $(document).ready(function() {
 
     function postForm($form) {
         $.post($form[0].action, $form.serialize()).then(function(response) {
+            grecaptcha.reset();
             $form.find('.success').text(response).slideDown();
         }).fail(function(err) {
             $form.find('.error').text(err.responseText).slideDown();
