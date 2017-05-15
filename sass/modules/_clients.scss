@@ -1,0 +1,111 @@
+.clients {
+    color: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+    position: relative;
+    background-image: url(../img/hero/hero-sm.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    @media only screen and (min-width: $screen-md-min) {
+        background-image: url(../img/hero/hero-md.png);
+    }
+    @media only screen and (min-width: $screen-lg-min) {
+        background-image: url(../img/hero/hero-lg.png);
+    }
+    @media only screen and (min-width: $screen-xl-min) {
+        background-image: url(../img/hero/hero-xl.png);
+    }
+    @media only screen and (min-width: $screen-xxl-min) {
+        background-image: url(../img/hero/hero-xxl.png);
+    }
+    @media only screen and (min-width: $screen-xxxl-min) {
+        background-image: url(../img/hero/hero-xxxl.png);
+    }
+    @media only screen and (max-width: $screen-md-max) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    h1 {
+        margin-bottom: 60px;
+        z-index: 1;
+        position: relative;
+        @media only screen and (max-width: $screen-md-max) {
+            margin-bottom: 30px;
+        }
+        @media only screen and (max-width: $screen-sm-max) {
+            font-size: 32px;
+        }
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #060606;
+        opacity: 0.8;
+        z-index: 0;
+    }
+    .logos {
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        [class*="col-"] {
+            @media only screen and (max-width: $screen-md-max) {
+                margin-top: 30px;
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+            &.active {
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+        img {
+            max-height: 100px;
+            max-width: 100%;
+            opacity: 0.4;
+            cursor: pointer;
+            -webkit-backface-visibility: hidden;
+            -webkit-transition: opacity 100ms ease-out;
+            -o-transition: opacity 100ms ease-out;
+            transition: opacity 100ms ease-out;
+            -webkit-transform: rotate(0);
+            -moz-transform: rotate(0);
+            transform: rotate(0);
+            -webkit-transform: translateZ(0);
+            @media only screen and (max-width: $screen-md-max) {
+                max-width: 200px;
+            }
+            @media only screen and (max-width: $screen-sm-max) {
+                opacity: 1;
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    .quotes {
+        height: 330px;
+        font-size: 24px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        .quote {
+            display: none;
+            &:first-child {
+                display: block;
+            }
+        }
+        @media only screen and (max-width: $screen-sm-max) {
+            display: none;
+        }
+    }
+}

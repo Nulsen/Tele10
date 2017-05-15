@@ -1,0 +1,16 @@
+.contact {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: $light-grey;
+    @media only screen and (max-width: $screen-md-max) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .contact-method {
+        white-space: nowrap;
+    }
+    .btn-outline-primary {
+        border-radius: 0;
+        cursor: pointer;
+    }
+}
