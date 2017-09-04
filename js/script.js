@@ -28,8 +28,10 @@ $(document).ready(function() {
 
         const $message = $(e.target).find('.success:visible, .error:visible');
 
+            $(this).find('button').addClass('disabled');
+
         if ($message.length) {
-            $message.slideUp(function() {
+            $message.slideUp().promise().then(function() {
                 postForm($(e.target));
             });
         } else {
@@ -40,11 +42,11 @@ $(document).ready(function() {
     function postForm($form) {
         $.post($form[0].action, $form.serialize()).then(function(response) {
             $form[0].reset();
-            $form.find('.success').text(response).slideDown();
+            $form.find('.success').html(response).slideDown();
         }).fail(function(err) {
-            $form.find('.error').text(err.responseText).slideDown();
+            $form.find('.error').html(err.responseText).slideDown();
         }).done(function() {
-            grecaptcha.reset();
+            $form.find('button').removeClass('disabled');
         });
     }
 });

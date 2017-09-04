@@ -80,6 +80,20 @@
                 margin-bottom: 50px;
             }
         }
+        .bottom-aligned {
+            height: 150px;
+            order: 2;
+            @media only screen and (min-width: $screen-lg-min) {
+                img {
+                    position: absolute;
+                    bottom: -99px;
+                    right: 0;
+                    height: 240px;
+                    max-height: none;
+                    max-width: none;
+                }
+            }
+        }
     }
     &.multiple {
         img {

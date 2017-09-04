@@ -1,20 +1,23 @@
 <?php
+    iconv_set_encoding("internal_encoding", "UTF-8");
+
     require 'phpmailer/PHPMailerAutoload.php';
 
     $name = $_POST['name'];
     $email = $_POST['email'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-    $response = $_POST['g-recaptcha-response'];
 
-    $res = testRobot($response);
-    $json = json_decode($res, true);
-    $success = $json['success'];
-
-    if ($success != 1) {
-        header("HTTP/1.0 400 Bad Request");
-        die ("Du har fyllt i captcha-koden felaktigt, försök igen.");
-    }
+    $body = '<p>Hej!</p>
+            <p>En förfrågan har kommit in via kontaktformuläret på hemsidan.</p>
+            <ul>
+                <li><b>Namn</b>: ' . $name . '</li>
+                <li><b>E-post</b>: ' . $email . '</li>
+                <li><b>Ämne</b>: ' . $subject . '</li>
+            </ul>
+            <b>Meddelande</b>:
+            <br />
+            ' . $message;
 
     $mail = new PHPMailer;
 
@@ -24,51 +27,23 @@
     $mail->Host = 'smtp01.binero.se'; // Specify main and backup SMTP servers
     $mail->SMTPAuth = true; // Enable SMTP authentication
     $mail->Username = 'contact@tele10.se'; // SMTP username
-    $mail->Password = ''; // SMTP password
-    $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted - ttl / ssl
+    $mail->Password = '1egYnzpZDV'; // SMTP password
+    $mail->CharSet = 'UTF-8'; 
+    $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted - tls / ssl
     $mail->Port = 465; // TCP port to connect to - 587 / 465
 
-    $mail->isHTML(false);
+    $mail->isHTML(true);    
 
-    $mail->setFrom($email, $name);
-    $mail->addAddress('kristina.westerberg@tele10.se', 'Tele10'); // Add a recipient
+    $mail->setFrom($email, 'Kontaktformulär');
+    $mail->addAddress('info@tele10.se', 'Tele10'); // Add a recipient
 
-    $mail->Subject = 'Tele10 webite form - ' . $subject;
-    $mail->Body = $message;
+    $mail->Subject = 'Tele10 kontaktformulär - ' . $service;
+    $mail->Body = $body;
 
     if (!$mail->send()) {
         header("HTTP/1.0 500 Internal Server Error");
-        die ("Meddelandet kunde inte tyvärr inte skickas för tillfället. Skicka istället ditt ärende direkt till <a href=\"mailto:info@tele10.se\">info@tele10.se</a>");
+        die ("Meddelandet kunde tyvärr inte skickas för tillfället. Skicka istället ditt ärende direkt till <a href=\"mailto:info@tele10.se\">info@tele10.se</a>");
     } else {
-        echo 'Ditt meddelande har skickats, vi återkommer så fort som möjligt.';
-    }
-
-    function getRealIpAddr() {
-        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-            $ip = $_SERVER['HTTP_CLIENT_IP'];
-        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        } else {
-            $ip = $_SERVER['REMOTE_ADDR'];
-        }
-
-        return $ip;
-    }
-
-    function testRobot($response) {
-        $url = 'https://www.google.com/recaptcha/api/siteverify';
-        $secret = '6LeboCAUAAAAABEtpDeF7F5AOvT-cG3HzerFaMqB';
-        $remoteip = getRealIpAddr();
-
-        $vars = 'secret=' . $secret . '&response=' . $response . '&remoteip=' . $remoteip;
-
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $vars);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-        return curl_exec($ch);
+        echo 'Tack! Din bokning har skickats, vi återkommer så fort som möjligt.';
     }
 ?>

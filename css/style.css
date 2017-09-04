@@ -2,17 +2,6 @@ html,
 body {
   font-family: "Trebuchet MS", Verdana, Arial, sans-serif; }
 
-  .success {
-    color: green;
-    margin-bottom: 15px;
-    display: none;
-  }
-  .error {
-    color: red;
-    margin-bottom: 15px;
-    display: none;
-  }
-
 .fullscreen-hero {
   width: 100vw;
   height: calc(100vh - 56px);
@@ -55,11 +44,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     color: #fff;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%); }
+    top: calc(50% - 182px / 2); }
     @media only screen and (min-width: 768px) {
       .fullscreen-hero .caption {
         max-width: 520px; } }
@@ -593,6 +578,17 @@ body {
     @media only screen and (max-width: 991px) {
       .services .service img {
         margin-bottom: 50px; } }
+  .services .service .bottom-aligned {
+    height: 150px;
+    order: 2; }
+    @media only screen and (min-width: 992px) {
+      .services .service .bottom-aligned img {
+        position: absolute;
+        bottom: -99px;
+        right: 0;
+        height: 240px;
+        max-height: none;
+        max-width: none; } }
   .services.multiple img {
     max-height: 180px;
     margin-bottom: 50px; }
@@ -646,7 +642,7 @@ body {
 
 .footer {
   padding-top: 100px;
-  padding-bottom: 100px; }
+  padding-bottom: 50px; }
   @media only screen and (max-width: 991px) {
     .footer {
       padding-top: 50px;
@@ -658,3 +654,6 @@ body {
       margin-top: 30px; } }
   .footer .map {
     margin-top: 30px; }
+  .footer .copyright {
+    margin-top: 15px;
+    color: #bbb; }
