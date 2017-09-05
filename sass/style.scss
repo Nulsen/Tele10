@@ -19,7 +19,7 @@ $screen-xl-max: $screen-xxl-min - 1;
 $screen-xxl-max: $screen-xxxl-min - 1;
 html,
 body {
-    font-family: $font;
+	font-family: $font;
 }
 
 @import "modules/hero";
@@ -32,3 +32,11 @@ body {
 @import "modules/contact";
 @import "modules/subsidiary";
 @import "modules/footer";
+
+// img {
+// 	-ms-interpolation-mode: bicubic;
+// 	// -ms-interpolation-mode: nearest-neighbor;
+// 	image-rendering: -moz-crisp-edges;
+// 	image-rendering: -o-crisp-edges;
+// 	image-rendering: -webkit-optimize-contrast;
+// }

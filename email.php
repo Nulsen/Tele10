@@ -44,6 +44,6 @@
         header("HTTP/1.0 500 Internal Server Error");
         die ("Meddelandet kunde tyvärr inte skickas för tillfället. Skicka istället ditt ärende direkt till <a href=\"mailto:info@tele10.se\">info@tele10.se</a>");
     } else {
-        echo 'Tack! Din bokning har skickats, vi återkommer så fort som möjligt.';
+        echo 'Tack! Ditt meddelande har skickats, vi återkommer så fort som möjligt.';
     }
 ?>
