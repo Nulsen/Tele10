@@ -1,25 +1,27 @@
 .fullscreen-hero {
     width: 100vw;
-    height: calc(100vh - 56px);
+    height: 100vh;
     position: relative;
     background-image: url(../img/hero/hero-sm.png);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
-    @media only screen and (min-width: $screen-md-min) {
-        background-image: url(../img/hero/hero-md.png);
-    }
-    @media only screen and (min-width: $screen-lg-min) {
-        background-image: url(../img/hero/hero-lg.png);
-    }
-    @media only screen and (min-width: $screen-xl-min) {
-        background-image: url(../img/hero/hero-xl.png);
-    }
-    @media only screen and (min-width: $screen-xxl-min) {
-        background-image: url(../img/hero/hero-xxl.png);
-    }
-    @media only screen and (min-width: $screen-xxxl-min) {
-        background-image: url(../img/hero/hero-xxxl.png);
+    overflow: hidden;
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        // background: url(polina.jpg) no-repeat;
+        background-size: cover;
     }
     &:after {
         content: "";
@@ -33,31 +35,30 @@
         z-index: 0;
     }
     .caption {
-        position: relative;
+        position: absolute;
         z-index: 1;
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+        left: 50%;
+        -ms-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
         padding-left: 15px;
         padding-right: 15px;
         color: #fff;
         top: calc(50% - 182px / 2);
-        @media only screen and (min-width: $screen-md-min) {
-            max-width: 520px;
-        }
         @media only screen and (min-width: $screen-xl-min) {
-            max-width: 680px;
+            max-width: 720px;
         }
         h1 {
             margin-bottom: 30px;
-            @media only screen and (max-width: $screen-sm-max) {
-                margin-bottom: 15px;
-                font-size: 30px;
-            }
+            font-size: 48px;
+            font-weight: 300;
         }
         h3 {
             margin-bottom: 15px;
             font-size: 18px;
+            font-weight: 300;
             @media only screen and (min-width: $screen-md-min) {
                 margin-bottom: 30px;
                 font-size: 20px;
@@ -65,10 +66,13 @@
         }
         .btn {
             border-radius: 0;
-            border-color: #fff;
+            border: 1px solid #fff;
             color: #fff;
             padding: 0.8rem 2rem;
             cursor: pointer;
+            background-color: transparent;
+            -webkit-box-shadow: none;
+            box-shadow: none;
         }
     }
 }
