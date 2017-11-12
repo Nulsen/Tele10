@@ -68,6 +68,6 @@ ga('send', 'pageview');
         </ul>
         <div class="button"></div>
     </div>
-</nav> <div class="hero products-and-services"><div class="caption"><h1>FAQ - Vanliga frågor</h1></div></div><div class="system-status"><div class="container"><div class="row"><div class="col-12 text-center"><h2>Vi har för närvarande inga driftstörningar.</h2></div></div><div class="row"><div class="col-12"><p></p></div></div></div></div> <div class="copyright small col-12">
+</nav> <div class="hero products-and-services"><div class="caption"><h1>Driftinformation</h1></div></div><div class="system-status"><div class="container"><div class="row"><div class="col-12 text-center"><h2>Vi har för närvarande inga driftstörningar.</h2></div></div><div class="row"><div class="col-12"><p></p></div></div></div></div> <div class="copyright small col-12">
     Copyright © <script>document.write(new Date().getFullYear());</script> Tele10. All rights reserved.
 </div> <script type="text/javascript" src="script/script.js"></script></body></html>
