@@ -76,4 +76,10 @@
             margin-bottom: 0;
         }
     }
+    .row {
+        margin-bottom: 30px;
+        &:last-chid {
+            margin-bottom: 0;
+        }
+    }
 }

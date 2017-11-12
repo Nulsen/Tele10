@@ -3,7 +3,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         $('html, body').stop().animate({
-            scrollTop: $('.pitch').offset().top
+            scrollTop: $('.pitch').offset().top - 59
         }, 500);
     });
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
             $('.nav ul').removeClass('active');
 
             $('html, body').stop().animate({
-                scrollTop: $('#mobile').offset().top
+                scrollTop: $('#mobile').offset().top - 59
             }, 500);
         });
     }
