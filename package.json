@@ -7,7 +7,9 @@
     "type": "git",
     "url": "https://bitbucket.org/jonathan-nielsen/Tele10"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gulp-order": "^1.1.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.24.1",

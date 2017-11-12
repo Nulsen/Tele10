@@ -119,4 +119,24 @@
             }
         }
     }
+    &#mobile {
+        text-align: center;
+        @media only screen and (min-width: $screen-lg-min) {
+            text-align: left;
+        }
+        .title {
+            margin-bottom: 30px;
+        }
+        .phone {
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 60px;
+            @media only screen and (min-width: $screen-lg-min) {
+                margin-bottom: 0;
+            }
+        }
+        .sim-card {
+            height: 100px;
+        }
+    }
 }

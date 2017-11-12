@@ -1,0 +1,49 @@
+<nav class="nav">
+    <div class="container">
+        <ul>
+            <li class="brand">
+                <a href="/">
+                    <img src="img/logo.png" alt="Tele10">
+                </a>
+            </li>
+            <li class="item{{#if om-tele10}} active{{/if}}">
+                <a href="/om-tele10">Om Tele10</a>
+            </li>
+            <li class="item{{#if vaxeltjanster}} active{{/if}}">
+                <a href="/vaxeltjanster">Växeltjänster</a>
+            </li>
+            <li class="item{{#if anvandartjanster}} active{{/if}}">
+                <a href="/anvandartjanster">Användartjänster</a>
+            </li>
+            <li class="item">
+                <a href="/anvandartjanster#mobile">Mobiltelefoni</a>
+            </li>
+            <li class="item dropdown">
+                <span>Support</span>
+                <ul>
+                    <li class="item{{#if faq}} active{{/if}}">
+                        <a href="/faq">FAQ</a>
+                    </li>
+                    <li class="item{{#if system-status}} active{{/if}}">
+                        <a href="/driftinformation">Driftinformation</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item">
+                <a href="/kontakt{{#if contact}} active{{/if}}">Kontakt</a>
+            </li>
+            <li class="item right dropdown">
+                <span>Logga in</span>
+                <ul>
+                    <li class="item">
+                        <a href="https://hem.tele10.se/">Hem.tele10.se</a>
+                    </li>
+                    {{!-- <li class="item">
+                        <a href="https://hem.tele10.se/">Shop</a>
+                    </li> --}}
+                </ul>
+            </li>
+        </ul>
+        <div class="button"></div>
+    </div>
+</nav>

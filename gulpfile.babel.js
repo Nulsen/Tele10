@@ -7,6 +7,7 @@ import handlebars from 'gulp-compile-handlebars';
 import htmlmin from 'gulp-html-minifier';
 import rename from 'gulp-rename';
 import sass from 'gulp-sass';
+import order from 'gulp-order';
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 import yargs from 'yargs';
@@ -25,7 +26,7 @@ gulp.task('default', async function(done) {
 		});
 
 		console.log('Watching JS...');
-		gulp.watch('./script/**/*.js', async() => {
+		gulp.watch('./js/**/*.js', async() => {
 			await buildJs();
 		});
 
@@ -56,9 +57,9 @@ async function buildHtml(ext) {
 				batch: ['./html/partials']
 			}))
 			.pipe(rename({
-				extname: '.html'
+				extname: '.php'
 			}))
-			.pipe(gulp.dest('./dist/html'))
+			.pipe(gulp.dest('./dist'))
 			.on('end', resolve);
 	});
 
@@ -69,8 +70,13 @@ async function buildJs(ext) {
 	console.log(`\nBuilding script.js...`);
 
 	await new Promise((resolve, reject) => {
-		gulp.src('./script/**/*.js')
+		gulp.src('./js/**/*.js')
 			.pipe(sourcemaps.init({ loadMaps: true }))
+			.pipe(order([
+				'vendor/jquery-3.2.1.min.js',
+				'vendor/**/*.js',
+				'modules/**/*.js',
+			]))
 			.pipe(babel({
 				sourceMaps: true,
 				presets: [
@@ -95,7 +101,7 @@ async function buildScss(ext) {
 	await new Promise((resolve, reject) => {
 		gulp.src('./scss/style.scss')
 			.pipe(sourcemaps.init())
-			.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+			.pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
 			.pipe(rename(`style.css`))
 			.pipe(sourcemaps.write())
 			.pipe(duration(`style.css`))

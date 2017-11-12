@@ -1,11 +1,10 @@
 .fullscreen-hero {
     width: 100vw;
     height: 100vh;
-    position: relative;
-    background-image: url(../img/hero/hero-sm.png);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
+    position: relative; // background-image: url(../img/hero/hero-sm.png);
+    // background-repeat: no-repeat;
+    // background-position: top center;
+    // background-size: cover;
     overflow: hidden;
     video {
         position: absolute;
@@ -20,7 +19,7 @@
         -moz-transform: translateX(-50%) translateY(-50%);
         -webkit-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%);
-        // background: url(polina.jpg) no-repeat;
+        background: url(../video/cover/index-hero.jpeg) no-repeat;
         background-size: cover;
     }
     &:after {
@@ -31,29 +30,42 @@
         bottom: 0;
         left: 0;
         background-color: $primary;
-        opacity: 0.3;
+        opacity: 0.15;
         z-index: 0;
     }
     .caption {
         position: absolute;
         z-index: 1;
         text-align: center;
-        left: 50%;
-        -ms-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
         padding-left: 15px;
         padding-right: 15px;
         color: #fff;
         top: calc(50% - 182px / 2);
+        width: 100%;
+        @media only screen and (min-width: $screen-sm-min) {
+            left: 25%;
+            -ms-transform: translateX(-25%);
+            -moz-transform: translateX(-25%);
+            -webkit-transform: translateX(-25%);
+            transform: translateX(-25%);
+        }
+        @media only screen and (min-width: $screen-md-min) {
+            left: 50%;
+            -ms-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
         @media only screen and (min-width: $screen-xl-min) {
             max-width: 720px;
         }
         h1 {
             margin-bottom: 30px;
-            font-size: 48px;
+            font-size: 32px;
             font-weight: 300;
+            @media only screen and (min-width: $screen-md-min) {
+                font-size: 48px;
+            }
         }
         h3 {
             margin-bottom: 15px;

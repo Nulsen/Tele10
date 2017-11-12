@@ -1,7 +1,10 @@
+// Generals
 $primary: #003976;
 $black: #444444;
 $light-grey: #f8f8f8;
 $font: "Helvetica Neue";
+
+// Breakpoints
 $screen-sm-min: 576px;
 $screen-md-min: 768px;
 $screen-lg-min: 992px;
@@ -15,24 +18,45 @@ $screen-lg-max: $screen-xl-min - 1;
 $screen-xl-max: $screen-xxl-min - 1;
 $screen-xxl-max: $screen-xxxl-min - 1;
 
-@import "vendor/bootstrap-grid.min.css";
+// Navbar
+$navbar-brand-height: 45px;
+$navbar-brand-padding-top: 1px;
+$navbar-brand-padding-bottom: 8px;
+$navbar-height: $navbar-brand-height + $navbar-brand-padding-top + $navbar-brand-padding-bottom;
+
+@import "vendor/bootstrap.min";
+@import "vendor/font-awesome.min";
 
 html,
 body {
     font-family: $font;
+    font-weight: 300;
     margin: 0;
 }
 
-@import "modules/hero";
-@import "modules/pitch";
-@import "modules/examples";
-@import "modules/clients";
+h1, h2, h3, h4, h5 {
+	font-weight: 300;
+}
+
+strong {
+	font-weight: 400;
+}
+
 @import "modules/about";
+@import "modules/accordion";
+@import "modules/clients";
+@import "modules/contact";
+@import "modules/copyright";
+@import "modules/examples";
+@import "modules/faq";
+@import "modules/footer";
+@import "modules/hero";
+@import "modules/navbar";
+@import "modules/pitch";
 @import "modules/products";
 @import "modules/services";
-@import "modules/contact";
 @import "modules/subsidiary";
-@import "modules/footer";
+@import "modules/system-status";
 
 // img {
 // 	-ms-interpolation-mode: bicubic;

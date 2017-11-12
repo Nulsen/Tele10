@@ -1,0 +1,90 @@
+.accordion {
+    .item {
+        position: relative;
+        float: left;
+        width: 100%;
+        &.active {
+            .content {
+                opacity: 1;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                display: block;
+            }
+        }
+    }
+    .title {
+        cursor: pointer;
+        font-size: 24px;
+        margin: 6px 0;
+        span {
+            border-bottom: 1px solid transparent;
+            -webkit-transition: border-color 100ms ease-out;
+            -o-transition: border-color 100ms ease-out;
+            transition: border-color 100ms ease-out;
+            @media only screen and (min-width: $screen-md-min) {
+                border-width: 2px;
+            }
+        }
+        &:hover {
+            span {
+                border-color: $primary;
+            }
+        }
+    }
+    .content {
+        margin: 0;
+        opacity: 0;
+        height: 0px;
+        overflow: hidden;
+        transform: translateZ(0);
+        transition: margin-top 300ms ease-out, opacity 300ms ease-out;
+    }
+    img {
+        max-width: 480px;
+        max-height: 400px;
+        display: inline-block;
+        &:first-child {
+            margin-left: 0;
+        }
+        +img {
+            margin-left: 10px;
+        }
+        +p {
+            margin-top: 1rem;
+        }
+    }
+    *+h1,
+    *+h2,
+    *+h3,
+    *+h4,
+    *+h5 {
+        margin-top: 1rem;
+    }
+    .box {
+        width: 16px;
+        height: 16px;
+        float: left;
+        margin-right: 10px;
+        margin-top: 0.25rem;
+        border-radius: 50%;
+        &.green {
+            background-color: #8bc34a;
+        }
+        &.yellow {
+            background-color: #ffeb3b;
+        }
+        &.red {
+            background-color: #e91e63;
+        }
+        &.grey {
+            background-color: #9e9e9e;
+        }
+    }
+    p img {
+        display: inline-block;
+        max-width: 22px;
+        max-height: 22px;
+        margin-top: -4px;
+        margin-right: 10px;
+    }
+}
