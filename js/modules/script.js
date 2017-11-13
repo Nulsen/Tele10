@@ -7,14 +7,14 @@ $(document).ready(function() {
         }, 500);
     });
 
-    $('.nav .button').click((e) => {
+    $('.nav .button').click(function(e) {
         e.preventDefault();
 
         $('.nav ul').toggleClass('active');
     });
 
     if (window.location.pathname == '/anvandartjanster') {
-        $('.nav [href="/anvandartjanster#mobile"]').click((e) => {
+        $('.nav [href="/anvandartjanster#mobile"]').click(function(e) {
             e.preventDefault();
 
             $('.nav ul').removeClass('active');
@@ -24,6 +24,13 @@ $(document).ready(function() {
             }, 500);
         });
     }
+
+    $('.nav .item').not('.dropdown').click(function(e) {
+        if (!$(e.target).is('a')) {
+            var href = $(this).find('a').attr('href');
+            window.location.href = href;
+        }
+    });
 
     $('.contact form').submit(function(e) {
         e.preventDefault();
