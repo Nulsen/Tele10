@@ -5,6 +5,9 @@
         padding-top: 50px;
         padding-bottom: 50px;
     }
+    &.grey {
+        background-color: $light-grey;
+    }
     .message {
         text-align: center;
         h2 {
