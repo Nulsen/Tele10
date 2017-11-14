@@ -13,8 +13,8 @@ $(document).ready(function() {
         $('.nav ul').toggleClass('active');
     });
 
-    if (window.location.pathname == '/anvandartjanster') {
-        $('.nav [href="/anvandartjanster#mobile"]').click(function(e) {
+    if (window.location.pathname == '/tele10-molnvaxel') {
+        $('.nav [href="/tele10-molnvaxel#mobile"]').click(function(e) {
             e.preventDefault();
 
             $('.nav ul').removeClass('active');

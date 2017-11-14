@@ -35,13 +35,10 @@ ga('send', 'pageview');
                 <a href="/om-tele10">Om Tele10</a>
             </li>
             <li class="item">
-                <a href="/vaxeltjanster">Växeltjänster</a>
+                <a href="/tele10-molnvaxel">Tele10 molnväxel</a>
             </li>
             <li class="item">
-                <a href="/anvandartjanster">Användartjänster</a>
-            </li>
-            <li class="item">
-                <a href="/anvandartjanster#mobile">Mobiltelefoni</a>
+                <a href="/tele10-molnvaxel#mobile">Mobiltelefoni</a>
             </li>
             <li class="item dropdown">
                 <span>Support</span>

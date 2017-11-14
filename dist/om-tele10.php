@@ -35,13 +35,10 @@ ga('send', 'pageview');
                 <a href="/om-tele10">Om Tele10</a>
             </li>
             <li class="item">
-                <a href="/vaxeltjanster">Växeltjänster</a>
+                <a href="/tele10-molnvaxel">Tele10 molnväxel</a>
             </li>
             <li class="item">
-                <a href="/anvandartjanster">Användartjänster</a>
-            </li>
-            <li class="item">
-                <a href="/anvandartjanster#mobile">Mobiltelefoni</a>
+                <a href="/tele10-molnvaxel#mobile">Mobiltelefoni</a>
             </li>
             <li class="item dropdown">
                 <span>Support</span>
@@ -68,6 +65,6 @@ ga('send', 'pageview');
         </ul>
         <div class="button"></div>
     </div>
-</nav> <div class="hero about-us"><div class="caption"><h1>Om Tele10</h1></div></div><div class="about"><div class="container"><p>V&aring;r aff&auml;rsid&eacute; &auml;r att erbjuda flexibla och kostnadseffektiva kommunikationstj&auml;nster f&ouml;r f&ouml;retag och organisationer. Fast eller mobil telefon. P&aring; kontoret, p&aring; landet, hemma eller i Peking.</p><p>Det skall vara enkelt och billigt att vara en del av f&ouml;retagets v&auml;xel var man &auml;n befinner sig. Med hj&auml;lp av den senaste tekniken tar vi fram tj&auml;nster som effektiviserar b&aring;de kostnader och Ert s&auml;tt att arbeta.</p></div></div> <div class="copyright small col-12">
+</nav> <div class="hero about-us"><div class="caption"><h1>Om Tele10</h1></div></div><div class="about"><div class="container"><p>V&aring;r aff&auml;rsid&eacute; &auml;r att erbjuda flexibla och kostnadseffektiva kommunikationstj&auml;nster f&ouml;r f&ouml;retag och organisationer. Fast eller mobil telefon. P&aring; kontoret, p&aring; landet, hemma eller i Peking.</p><p>Det skall vara enkelt och billigt att vara en del av f&ouml;retagets v&auml;xel var man &auml;n befinner sig. Med hj&auml;lp av den senaste tekniken tar vi fram tj&auml;nster som effektiviserar b&aring;de kostnader och Ert s&auml;tt att arbeta.</p><p>En personlig kontakt från kontrakt till driftsättning.</p></div></div> <div class="copyright small col-12">
     Copyright © <script>document.write(new Date().getFullYear());</script> Tele10. All rights reserved.
 </div> <script type="text/javascript" src="script/script.js"></script></body></html>
