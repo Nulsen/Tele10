@@ -1,0 +1,15 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../font/HelveticaNeue-Thin.eot');
+    src: url('../font/HelveticaNeue-Thin.eot?#iefix') format('embedded-opentype'), url('../font/HelveticaNeue-Thin.woff2') format('woff2'), url('../font/HelveticaNeue-Thin.woff') format('woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../font/HelveticaNeue-ThinItalic.eot');
+    src: url('../font/HelveticaNeue-ThinItalic.eot?#iefix') format('embedded-opentype'), url('../font/HelveticaNeue-ThinItalic.woff2') format('woff2'), url('../font/HelveticaNeue-ThinItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
