@@ -1,13 +1,14 @@
 import babel from 'gulp-babel-simple-transpile';
+import cleanCSS from 'gulp-clean-css';
 import concat from 'gulp-concat';
 import convertEncoding from 'gulp-convert-encoding';
 import duration from 'gulp-duration';
 import gulp from 'gulp';
 import handlebars from 'gulp-compile-handlebars';
 import htmlmin from 'gulp-html-minifier';
+import order from 'gulp-order';
 import rename from 'gulp-rename';
 import sass from 'gulp-sass';
-import order from 'gulp-order';
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 import yargs from 'yargs';
@@ -71,7 +72,7 @@ async function buildJs(ext) {
 
 	await new Promise((resolve, reject) => {
 		gulp.src('./js/**/*.js')
-			.pipe(sourcemaps.init({ loadMaps: true }))
+			// .pipe(sourcemaps.init({ loadMaps: true }))
 			.pipe(order([
 				'vendor/jquery-3.2.1.min.js',
 				'vendor/**/*.js',
@@ -86,7 +87,7 @@ async function buildJs(ext) {
 			}))
 			.pipe(concat(`script.js`))
 			.pipe(uglify())
-			.pipe(sourcemaps.write())
+			// .pipe(sourcemaps.write())
 			.pipe(duration(`script.js`))
 			.pipe(gulp.dest('./dist/script'))
 			.on('end', resolve);
@@ -100,10 +101,11 @@ async function buildScss(ext) {
 
 	await new Promise((resolve, reject) => {
 		gulp.src('./scss/style.scss')
-			.pipe(sourcemaps.init())
-			.pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+			// .pipe(sourcemaps.init())
+			.pipe(sass().on('error', sass.logError))
 			.pipe(rename(`style.css`))
-			.pipe(sourcemaps.write())
+			.pipe(cleanCSS())
+			// .pipe(sourcemaps.write())
 			.pipe(duration(`style.css`))
 			.pipe(gulp.dest('./dist/css'))
 			.on('end', resolve);

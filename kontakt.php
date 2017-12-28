@@ -7,23 +7,8 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://www.tele10.se/">
 <meta property="og:description" content="Molnbaserad v&auml;xel, fast eller mobil.">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<title>Tele10 - Kontakt</title> </head><body> <script async>
-(function(i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-ga('create', 'UA-98888977-1', 'auto');
-ga('send', 'pageview');
-</script> <nav class="nav">
+<link rel="stylesheet" type="text/css" href="css/tmp.css">
+<title>Tele10 - Kontakt</title> </head><body> <nav class="nav">
     <div class="container">
         <ul>
             <li class="brand">
@@ -69,4 +54,4 @@ ga('send', 'pageview');
                             <div class="g-recaptcha" data-sitekey="6LeboCAUAAAAAAeAQknB8cE6besil24SKIBs2HXK"></div>
                         </div> --><div class="success"></div><div class="error"></div><button type="submit" class="btn btn-outline-primary">Skicka</button></form></div></div></div></div><div class="footer"><div class="container"><div class="row"><div class="map col-md-8"><iframe width="100%" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyACc4iV32BvIR2T-k08Lqq5op0A8fZtueg&q=Olof+Asklunds+gata+8,+421+30" allowfullscreen></iframe></div><div class="contact-footer col-12 col-md-4"><h4>Kontakt</h4><address><div><strong>Tele10 AB</strong></div><div>Box 2154</div><div>421 02 V&auml;stra Fr&ouml;lunda</div><div>Telefon: <a href="tel:0772101000">0772 - 10 10 00</a></div><div>E-post: <a href="mailto:info@tele10.se">info@tele10.se</a></div></address></div></div></div></div> <div class="copyright small col-12">
     Copyright © <script>document.write(new Date().getFullYear());</script> Tele10. All rights reserved.
-</div> <script type="text/javascript" src="script/script.js"></script><script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script></body></html>
+</div> <link rel="stylesheet" type="text/css" href="css/style.css"><script type="text/javascript" src="script/script.js"></script><script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script></body></html>
