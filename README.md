@@ -1,2 +1,2 @@
 # Tele10
-Tele10 website
+Official repoistory of the website [Tele10.se](http://www.tele10.se/).
