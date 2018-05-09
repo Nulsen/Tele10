@@ -40,7 +40,7 @@
                 <a class="item active" href="/kontakt">Kontakt</a>
             </li>
             <li>
-                <a class="item" href="doc/tele10-gdpr.pdf" download>GDPR</a>
+                <a class="item" href="doc/tele10-gdpr.pdf">GDPR</a>
             </li>
             <li>
                 <a class="item" href="https://www.shop.tele10.se/">Shop</a>
