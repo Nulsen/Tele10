@@ -16,34 +16,40 @@
                     <img src="img/logo.png" alt="Tele10">
                 </a>
             </li>
-            <li class="item">
-                <a href="/om-tele10">Om Tele10</a>
+            <li>
+                <a class="item" href="/om-tele10">Om Tele10</a>
             </li>
-            <li class="item">
-                <a href="/tele10-molnvaxel">Tele10 molnväxel</a>
+            <li>
+                <a class="item" href="/tele10-molnvaxel">Tele10 molnväxel</a>
             </li>
-            <li class="item">
-                <a href="/tele10-molnvaxel#mobile">Mobiltelefoni</a>
+            <li>
+                <a class="item" href="/tele10-molnvaxel#mobile">Mobiltelefoni</a>
             </li>
             <li class="item dropdown">
                 <span>Support</span>
                 <ul>
-                    <li class="item">
-                        <a href="/faq">FAQ</a>
+                    <li>
+                        <a class="item" href="/faq">FAQ</a>
                     </li>
-                    <li class="item">
-                        <a href="/driftinformation">Driftinformation</a>
+                    <li>
+                        <a class="item" href="/driftinformation">Driftinformation</a>
                     </li>
                 </ul>
             </li>
-            <li class="item">
-                <a href="/kontakt">Kontakt</a>
+            <li>
+                <a class="item" href="/kontakt">Kontakt</a>
+            </li>
+            <li>
+                <a class="item" href="doc/tele10-gdpr.pdf" download>GDPR</a>
+            </li>
+            <li>
+                <a class="item" href="https://www.shop.tele10.se/">Shop</a>
             </li>
             <li class="item right dropdown">
                 <span>Logga in</span>
                 <ul>
-                    <li class="item">
-                        <a href="https://hem.tele10.se/">Hem.tele10.se</a>
+                    <li>
+                        <a class="item" href="https://hem.tele10.se/">Hem.tele10.se</a>
                     </li>
                 </ul>
             </li>
