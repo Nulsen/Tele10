@@ -1,0 +1,85 @@
+.clients {
+    color: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    background-image: url(../media/images/hero/hero-sm.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    text-align: center;
+    @media only screen and (min-width: $screen-md-min) {
+        text-align: left;
+        background-image: url(../media/images/hero/hero-md.png);
+    }
+    @media only screen and (min-width: $screen-lg-min) {
+        background-image: url(../media/images/hero/hero-lg.png);
+    }
+    @media only screen and (min-width: $screen-xl-min) {
+        background-image: url(../media/images/hero/hero-xl.png);
+    }
+    @media only screen and (min-width: $screen-xxl-min) {
+        background-image: url(../media/images/hero/hero-xxl.png);
+    }
+    @media only screen and (min-width: $screen-xxxl-min) {
+        background-image: url(../media/images/hero/hero-xxxl.png);
+    }
+    @media only screen and (max-width: $screen-md-max) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    h1 {
+        text-align: center;
+        font-size: 48px;
+        margin-bottom: 60px;
+        z-index: 1;
+        position: relative;
+        @media only screen and (max-width: $screen-md-max) {
+            margin-bottom: 30px;
+        }
+        @media only screen and (max-width: $screen-sm-max) {
+            font-size: 32px;
+        }
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #060606;
+        opacity: 0.8;
+        z-index: 0;
+    }
+    .logo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        justify-content: center;
+        img {
+            max-height: 100px;
+            max-width: 180px;
+            @media only screen and (min-width: $screen-md-min) {
+                max-width: 100%;
+            }
+        }
+    }
+    .quote {
+        font-size: 18px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 2rem;
+        @media only screen and (min-width: $screen-md-min) {
+            font-size: 24px;
+            margin-bottom: 0;
+        }
+    }
+    .row {
+        margin-bottom: 30px;
+        &:last-chid {
+            margin-bottom: 0;
+        }
+    }
+}

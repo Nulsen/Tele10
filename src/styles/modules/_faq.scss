@@ -1,0 +1,11 @@
+.faq {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &.grey {
+        background-color: $light-grey;
+    }
+    @media only screen and (max-width: $screen-md-max) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}

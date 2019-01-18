@@ -1,0 +1,68 @@
+// Generals
+$primary: #003976;
+$black: #444444;
+$light-grey: #f8f8f8;
+$font: "Helvetica Neue";
+
+// Breakpoints
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+$screen-xxl-min: 1920px;
+$screen-xxxl-min: 2560px;
+$screen-xs-max: $screen-sm-min - 1;
+$screen-sm-max: $screen-md-min - 1;
+$screen-md-max: $screen-lg-min - 1;
+$screen-lg-max: $screen-xl-min - 1;
+$screen-xl-max: $screen-xxl-min - 1;
+$screen-xxl-max: $screen-xxxl-min - 1;
+
+// Navbar
+$navbar-brand-height: 45px;
+$navbar-brand-padding-top: 1px;
+$navbar-brand-padding-bottom: 8px;
+$navbar-height: $navbar-brand-height + $navbar-brand-padding-top + $navbar-brand-padding-bottom;
+
+@import "vendor/bootstrap.min";
+@import "vendor/font-awesome.min";
+
+html,
+body {
+    font-family: $font;
+    font-weight: 300;
+    margin: 0;
+}
+
+body {
+    margin-top: 55px;
+    opacity: 1;
+    @media only scren and (min-width: $screen-lg-min) {
+    	margin-top: 60px;
+    }
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: 300;
+}
+
+strong {
+	font-weight: 400;
+}
+
+@import "modules/about";
+@import "modules/accordion";
+@import "modules/clients";
+@import "modules/contact";
+@import "modules/copyright";
+@import "modules/examples";
+@import "modules/faq";
+@import "modules/footer";
+@import "modules/font";
+@import "modules/hero";
+@import "modules/navbar";
+@import "modules/pitch";
+@import "modules/products";
+@import "modules/services";
+@import "modules/subsidiary";
+@import "modules/system-status";

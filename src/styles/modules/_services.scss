@@ -1,0 +1,164 @@
+.services-preamble.preamble p {
+    max-width: 540px;
+}
+
+.services {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &.grey {
+        background-color: $light-grey;
+    }
+    @media only screen and (max-width: $screen-md-max) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .service {
+        .title {
+            margin-bottom: 30px;
+        }
+        .sub-title {
+            margin-bottom: 30px;
+        }
+        .info {
+            margin-bottom: 30px;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        li {
+            margin-bottom: 6px;
+            position: relative;
+            @media only screen and (min-width: $screen-lg-min) {
+                padding-left: 30px;
+            }
+            @media only screen and (max-width: $screen-sm-max) {
+                padding-left: 0;
+                margin-bottom: 30px;
+                padding-top: 50px;
+            }
+        }
+        .fa {
+            font-size: 18px;
+            color: #51bf5f;
+            margin-right: 10px;
+            @media only screen and (min-width: $screen-lg-min) {
+                margin-right: 0;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -o-transform: translateY(-50%);
+                transform: translateY(-50%);
+            }
+            @media only screen and (max-width: $screen-sm-max) {
+                margin-right: 0;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+                transform: translateX(-50%);
+                padding: 10px;
+                border: 1px solid #51bf5f;
+                border-radius: 50%;
+            }
+        }
+        .text-container {
+            @media only screen and (max-width: $screen-md-max) {
+                order: 1;
+            }
+        }
+        img {
+            max-height: 200px;
+            max-width: 100%;
+            padding: 0 15px;
+            @media only screen and (max-width: $screen-md-max) {
+                margin-bottom: 50px;
+            }
+        }
+        .bottom-aligned {
+            height: 150px;
+            order: 2;
+            @media only screen and (min-width: $screen-lg-min) {
+                img {
+                    position: absolute;
+                    bottom: -99px;
+                    right: 0;
+                    height: 240px;
+                    max-height: none;
+                    max-width: none;
+                }
+            }
+        }
+    }
+    &.multiple {
+        img {
+            max-height: 180px;
+            margin-bottom: 50px;
+        }
+        @media only screen and (min-width: $screen-lg-min) {
+            .service:first-child {
+                padding-right: 60px;
+                border-right: 1px solid #bbb;
+            }
+            .service:last-child {
+                padding-left: 60px;
+            }
+        }
+        @media only screen and (max-width: $screen-md-max) {
+            .service:first-child {
+                padding-bottom: 30px;
+                border-bottom: 1px solid #bbb;
+            }
+            .service:last-child {
+                padding-top: 30px;
+            }
+        }
+    }
+    &#mobile {
+        text-align: center;
+        @media only screen and (min-width: $screen-lg-min) {
+            text-align: left;
+        }
+        .title {
+            margin-bottom: 30px;
+        }
+        .phone {
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 60px;
+            @media only screen and (min-width: $screen-lg-min) {
+                margin-bottom: 0;
+            }
+        }
+        .sim-card {
+            height: 100px;
+        }
+    }
+    &.conference {
+        background-image: url(../media/images/conference-bg.jpeg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #fff;
+        position: relative;
+        &:after {
+            content: '';
+            background-color: rgba(0, 56, 116, 0.75);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .text-container {
+            position: relative;
+            z-index: 1;
+        }
+    }
+}

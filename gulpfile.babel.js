@@ -1,115 +1,55 @@
-import babel from 'gulp-babel-simple-transpile';
-import cleanCSS from 'gulp-clean-css';
-import concat from 'gulp-concat';
-import convertEncoding from 'gulp-convert-encoding';
-import duration from 'gulp-duration';
-import gulp from 'gulp';
-import handlebars from 'gulp-compile-handlebars';
-import htmlmin from 'gulp-html-minifier';
-import order from 'gulp-order';
-import rename from 'gulp-rename';
-import sass from 'gulp-sass';
-import sourcemaps from 'gulp-sourcemaps';
-import uglify from 'gulp-uglify';
-import yargs from 'yargs';
+const babel = require('gulp-babel');
+const cleanCSS = require('gulp-clean-css');
+const concat = require('gulp-concat');
+const handlebars = require('gulp-compile-handlebars');
+const order = require('gulp-order');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const uglify = require('gulp-uglify');
+const { src, dest, parallel } = require('gulp');
 
-const argv = yargs.argv;
+sass.compiler = require('node-sass');
 
-gulp.task('default', async function(done) {
-	await buildJs();
-	await buildScss();
-	await buildHtml();
-
-	if (argv.w) {
-		console.log('\nWatching HTML...');
-		gulp.watch('./html/**/*.handlebars', async() => {
-			await buildHtml();
-		});
-
-		console.log('Watching JS...');
-		gulp.watch('./js/**/*.js', async() => {
-			await buildJs();
-		});
-
-		console.log('Watching SCSS...');
-		gulp.watch('./scss/**/*.scss', async() => {
-			await buildScss();
-		});
-
-	} else {
-		done();
-		process.exit();
-	}
-});
-
-async function buildHtml(ext) {
-	console.log('\nBuilding HTML...');
-
-	await new Promise((resolve, reject) => {
-		gulp.src('./html/*.handlebars')
-			.pipe(htmlmin({
-				collapseWhitespace: true,
-				preserveLineBreaks: false,
-				minifyCSS: true,
-				minifyJS: true,
-				ignoreCustomFragments: [/[\{]{2,3}(.*?)[\}]{2,3}/]
-			}))
-			.pipe(handlebars({}, {
-				batch: ['./html/partials']
-			}))
-			.pipe(rename({
-				extname: '.php'
-			}))
-			.pipe(gulp.dest('./dist'))
-			.on('end', resolve);
-	});
-
-	console.log('HTML successfully built.');
+function html() {
+	return src('src/html/*.hbs')
+		.pipe(
+			handlebars(
+				{},
+				{
+					batch: ['./src/html/partials'],
+				}
+			)
+		)
+		.pipe(
+			rename({
+				extname: '.php',
+			})
+		)
+		.pipe(dest('dist/html'));
 }
 
-async function buildJs(ext) {
-	console.log(`\nBuilding script.js...`);
+function css() {
+	return src('src/styles/*.scss')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(cleanCSS({ compatibility: 'ie10' }))
+		.pipe(rename('style.min.css'))
+		.pipe(dest('dist/styles'));
+}
 
-	await new Promise((resolve, reject) => {
-		gulp.src('./js/**/*.js')
-			// .pipe(sourcemaps.init({ loadMaps: true }))
-			.pipe(order([
-				'vendor/jquery-3.2.1.min.js',
-				'vendor/**/*.js',
-				'modules/**/*.js',
-			]))
-			.pipe(babel({
-				sourceMaps: true,
-				presets: [
-					['es2015', { modules: false }],
-					'es2016',
-				],
-			}))
-			.pipe(concat(`script.js`))
-			.pipe(uglify())
-			// .pipe(sourcemaps.write())
-			.pipe(duration(`script.js`))
-			.pipe(gulp.dest('./dist/script'))
-			.on('end', resolve);
-	});
+function js() {
+	return src('src/scripts/**/*.js', { sourcemaps: true })
+		.pipe(order(['vendor/jquery-3.2.1.min.js', 'vendor/*.js', 'modules/*.js']))
+		.pipe(
+			babel({
+				presets: ['@babel/env'],
+			})
+		)
+		.pipe(concat('script.min.js'))
+		.pipe(uglify())
+		.pipe(dest('dist/scripts', { sourcemaps: true }));
+}
 
-	console.log(`script.js succesfully built.`);
-};
-
-async function buildScss(ext) {
-	console.log(`\nBuilding style.css...`);
-
-	await new Promise((resolve, reject) => {
-		gulp.src('./scss/style.scss')
-			// .pipe(sourcemaps.init())
-			.pipe(sass().on('error', sass.logError))
-			.pipe(rename(`style.css`))
-			.pipe(cleanCSS())
-			// .pipe(sourcemaps.write())
-			.pipe(duration(`style.css`))
-			.pipe(gulp.dest('./dist/css'))
-			.on('end', resolve);
-	});
-
-	console.log(`style.css succesfully built.`);
-};
+exports.js = js;
+exports.css = css;
+exports.html = html;
+exports.default = parallel(html, css, js);
