@@ -22,6 +22,7 @@
 		position: relative;
 		display: none;
 		width: 100%;
+		text-decoration: none;
 		&.dropdown {
 			padding: 0 8px;
 			@media only screen and (min-width: $screen-lg-min) {
@@ -71,9 +72,11 @@
 		@media only screen and (min-width: $screen-lg-min) {
 			&.dropdown {
 				.item {
-					&:hover {
-						border-bottom: none;
-						padding-bottom: 15px;
+					border-bottom-color: transparent;
+					border-left: 2px solid transparent;
+					&.active {
+						border-bottom-color: transparent;
+						border-left-color: $primary;
 					}
 				}
 				&:hover {
@@ -87,9 +90,12 @@
 					ul {
 						right: 0;
 						text-align: right;
+						.item {
+							border-left: none;
+							border-right: 2px solid transparent;
+						}
 						.item:hover {
-							border-right: 2px solid $primary;
-							padding-right: 6px;
+							border-right-color: $primary;
 						}
 					}
 				}
@@ -98,7 +104,6 @@
 						left: 0;
 						.item:hover {
 							border-left: 2px solid $primary;
-							padding-left: 6px;
 						}
 					}
 				}
