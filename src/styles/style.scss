@@ -29,17 +29,17 @@ $navbar-height: $navbar-brand-height + $navbar-brand-padding-top + $navbar-brand
 
 html,
 body {
-    font-family: $font;
-    font-weight: 300;
-    margin: 0;
+	font-family: $font;
+	font-weight: 300;
+	margin: 0;
 }
 
 body {
-    margin-top: 55px;
-    opacity: 1;
-    @media only scren and (min-width: $screen-lg-min) {
-    	margin-top: 60px;
-    }
+	margin-top: 55px;
+	opacity: 1;
+	@media only scren and (min-width: $screen-lg-min) {
+		margin-top: 60px;
+	}
 }
 
 h1, h2, h3, h4, h5 {
@@ -48,6 +48,16 @@ h1, h2, h3, h4, h5 {
 
 strong {
 	font-weight: 400;
+}
+
+img {
+	max-width: 100%;
+}
+
+/* Flow Chat */
+#tvx-customer-widget .tvx-customer-widget-button.ng-scope.tvx-collapse-button,
+.tippy-popper {
+	z-index: 1000 !important;
 }
 
 @import "modules/about";
@@ -66,3 +76,4 @@ strong {
 @import "modules/services";
 @import "modules/subsidiary";
 @import "modules/system-status";
+@import "modules/cookies";

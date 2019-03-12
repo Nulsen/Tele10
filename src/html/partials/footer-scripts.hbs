@@ -1,2 +1,33 @@
 <script type="text/javascript" src="scripts/script.min.js"></script>
 <script src="https://customerwidget.joinflow.com/tvx-customer-widget-app.js?widgetId=47152e23-afa5-450e-929e-dbb82eeb557c" charset="utf-8" crossorigin="anonymous" type="text/javascript" defer></script>
+<script type="text/javascript">
+var options = {
+	title: 'Tillåta Cookies',
+	message: 'De cookies som sparas är för att funktionalitet på hemsidan ska fungera korrekt. Några exempel på detta är chatten, karta på kontakt-sidan samt analysverktyg för att optimera hemsidan och åtgärda problem. Vi sparar ingen personlig data eller data som kan kopplas till dig som besökare.',
+	delay: 1000,
+	expires: 365,
+	link: 'doc/tele10-gdpr.pdf',
+	onAccept() {
+		if ($.fn.ihavecookies.preference('analytics') === false) {
+			window['ga-disable-UA-98888977-1'] = true;
+		}
+	},
+	uncheckBoxes: false,
+	checkBoxes: true,
+	acceptBtnLabel: 'Acceptera cookies',
+	advancedBtnLabel: 'Hantera cookies',
+	moreInfoLabel: 'Mer information',
+	cookieTypesTitle: 'Välj vilka cookies du vill tillåta',
+	fixedCookieTypeLabel: 'Väsentliga',
+	fixedCookieTypeDesc: 'Dessa är väsentliga för att hemsidan ska fungera korrekt. Ingen information om dig som användare sparas.',
+	cookieTypes: [{
+		type: 'Analysering',
+		value: 'analytics',
+		description: 'Cookies för att anlaysera hemsidan och hur den används.'
+	}],
+}
+
+$(document).ready(function() {
+	$('body').ihavecookies(options);
+});
+</script>
