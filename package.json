@@ -25,6 +25,8 @@
     "node-sass": "^4.11.0"
   },
   "babel": {
-    "presets": ["@babel/preset-env"]
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
