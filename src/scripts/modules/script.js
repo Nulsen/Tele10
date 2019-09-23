@@ -59,7 +59,12 @@ $(document).ready(function() {
     function postForm($form) {
         $.post($form[0].action, $form.serialize())
             .then(function(response) {
-                ga('send', 'event', 'Contact form', 'Send');
+                if ('ga' in window) {
+                    var tracker = ga.getAll()[0];
+                    if (tracker) {
+                        tracker.send('event', 'Contact form', 'Send');
+                    }
+                }
 
                 $form[0].reset();
                 $form
