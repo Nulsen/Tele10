@@ -60,7 +60,6 @@ $(document).ready(function() {
         $.post($form[0].action, $form.serialize())
             .then(function(response) {
                 ga('send', 'event', 'Contact form', 'Send');
-                alert('sent');
 
                 $form[0].reset();
                 $form
