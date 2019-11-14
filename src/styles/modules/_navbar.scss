@@ -6,14 +6,21 @@
 	border-bottom: 1px solid $primary;
 	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 	top: 0;
+	@media only screen and (min-width: $screen-lg-min) {
+		min-width: 160px;
+	}
+
 	ul {
 		padding: 0;
 		margin: 0;
 		list-style: none;
+		height: 100%;
+
 		&.active .item {
 			display: block;
 		}
 	}
+	
 	.item {
 		float: left;
 		color: #000;
@@ -23,17 +30,24 @@
 		display: none;
 		width: 100%;
 		text-decoration: none;
+		background-color: #fff;
+
 		&.dropdown {
 			padding: 0 8px;
 			@media only screen and (min-width: $screen-lg-min) {
 				padding: 17px 8px 15px;
 			}
+
 			.item {
 				margin-left: -8px;
 				@media only screen and (min-width: $screen-lg-min) {
+					white-space: nowrap;
+					padding-left: 16px;
+					padding-right: 16px;
 					margin-left: 0;
 				}
 			}
+
 			span {
 				display: none;
 				@media only screen and (min-width: $screen-lg-min) {
@@ -41,23 +55,28 @@
 				}
 			}
 		}
+		
 		@media only screen and (min-width: $screen-lg-min) {
 			display: block;
 			width: auto;
 		}
+		
 		@media only screen and (min-width: $screen-lg-min) {
 			&:hover {
 				cursor: pointer;
 				color: $primary;
+				background-color: #f6f6f6;
 			}
 			&:not(.dropdown):hover {
 				border-bottom: 1px solid $primary;
 				padding-bottom: 14px;
 			}
 		}
+
 		&.active {
+			background-color: #f6f6f6;
 			@media only screen and (max-width: $screen-md-max) {
-				border-left: 2px solid $primary;
+				border-left: 4px solid $primary;
 				padding-left: 6px;
 			}
 			@media only screen and (min-width: $screen-lg-min) {
@@ -69,15 +88,23 @@
 				}
 			}
 		}
+
 		@media only screen and (min-width: $screen-lg-min) {
 			&.dropdown {
 				.item {
 					border-bottom-color: transparent;
-					border-left: 2px solid transparent;
+					border-left: 4px solid transparent;
 					&.active {
 						border-bottom-color: transparent;
 						border-left-color: $primary;
 					}
+				}
+
+				li {
+					display: block;
+					float: left;
+					width: 100%;
+					box-shadow: 2px 2px 6px rgba(0,0,0,.1);
 				}
 				&:hover {
 					color: $primary;
@@ -92,10 +119,11 @@
 						text-align: right;
 						.item {
 							border-left: none;
-							border-right: 2px solid transparent;
+							border-right: 4px solid transparent;
 						}
 						.item:hover {
 							border-right-color: $primary;
+							background-color: #f6f6f6;
 						}
 					}
 				}
@@ -103,7 +131,7 @@
 					ul {
 						left: 0;
 						.item:hover {
-							border-left: 2px solid $primary;
+							border-left: 4px solid $primary;
 						}
 					}
 				}
@@ -112,7 +140,6 @@
 					position: absolute;
 					background-color: #fff;
 					border-top: 1px solid $primary;
-					box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 					top: 59px;
 					.item {
 						width: 100%;
@@ -152,5 +179,18 @@
 		@media only screen and (min-width: $screen-lg-min) {
 			display: none;
 		}
+	}
+
+	.btn.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+    font-size: 14px;
+    font-weight: bold;
+
+    &:hover,
+    &:active {
+			background-color: #002c5a;
+			border-color: #002c5a;
+    }
 	}
 }

@@ -32,11 +32,11 @@ body {
 	font-family: $font;
 	font-weight: 300;
 	margin: 0;
+	opacity: 1;
 }
 
 body {
 	margin-top: 55px;
-	opacity: 1;
 	@media only scren and (min-width: $screen-lg-min) {
 		margin-top: 60px;
 	}
@@ -58,6 +58,12 @@ img {
 #tvx-customer-widget .tvx-customer-widget-button.ng-scope.tvx-collapse-button,
 .tippy-popper {
 	z-index: 1000 !important;
+}
+
+@for $i from 1 through 10 {
+  .animated.delay-#{$i*100}ms {
+    animation-delay: $i*100ms;
+  }
 }
 
 @import "modules/about";
